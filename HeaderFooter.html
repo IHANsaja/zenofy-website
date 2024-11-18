@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header & Footer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.5.0/remixicon.css">
+</head>
+<body>
+    <header>
+        <div class="nav">
+            <div class="first-part">
+                <i class="ri-menu-4-line"></i>
+                <!-- Hamburger menu icon (for mobile only) -->
+                <i class="ri-menu-line menu-toggle"></i>
+                <img src="assets/logo.jpg" alt="zenofy-logo">
+                <h1>ZENOFY</h1>
+            </div>
+
+            <div class="mobile-mid-header">
+                <img src="assets/logo.jpg" alt="zenofy-logo" height="60px">
+                <h1>ZENOFY</h1>
+            </div>
+
+            <div class="nav-links">
+                <a href="#"><i class="ri-store-fill"></i><p>SHOP</p></a>
+                <a href="#"><i class="ri-home-9-fill"></i><p>HOME</p></a>
+                <a href="#"><i class="ri-user-6-fill"></i><p>PROFILE</p></a>
+            </div>
+            <i class="ri-shopping-cart-fill"></i>
+        </div>
+            
+        <!-- Mobile menu -->
+        <div class="mobile-menu">
+            <div class="close-menu">
+                <i class="ri-close-line"></i>
+            </div>
+            <div class="mobile-nav-links">
+                <a href="#"><i class="ri-store-fill"></i><p>SHOP</p></a>
+                <a href="#"><i class="ri-home-9-fill"></i><p>HOME</p></a>
+                <a href="#"><i class="ri-user-6-fill"></i><p>PROFILE</p></a>
+            </div>
+        </div>
+    </header>
+
+    <footer>
+        <div class="sec1"></div>
+        <div class="sec2"></div>
+        <div class="sec3"></div>
+    </footer>
+
+    <!-- toggling mobile menu -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const closeMenu = document.querySelector('.close-menu');
+
+            menuToggle.addEventListener('click', () => {
+                mobileMenu.classList.add('show');
+            });
+
+            closeMenu.addEventListener('click', () => {
+                mobileMenu.classList.remove('show');
+            });
+        });
+    </script>
+</body>
+</html>
