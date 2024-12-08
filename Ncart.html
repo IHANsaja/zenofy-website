@@ -3,21 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Header & Footer</title>
-<<<<<<< Updated upstream
-    <link rel="stylesheet" href="styles.css">
-=======
+    <title>Cart</title>
+    <link rel="stylesheet" href="CSS/Ncart.css">
     <link rel="stylesheet" href="CSS/styles.css">
->>>>>>> Stashed changes
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.5.0/remixicon.css">
 </head>
 <body>
     <header>
         <div class="nav">
             <div class="first-part">
-<<<<<<< Updated upstream
-                <i class="ri-menu-4-line"></i>
-=======
                 <i class="ri-menu-4-line dropdown-trigger"></i>
                 <ul class="dropdown-menu">
                         <li><a href="#">Projectors</a></li>
@@ -25,7 +19,6 @@
                         <li><a href="#">Projector Screens</a></li>
                         <li><a href="#">Other Accessories</a></li>
                 </ul>
->>>>>>> Stashed changes
                 <!-- Hamburger menu icon (for mobile only) -->
                 <i class="ri-menu-line menu-toggle"></i>
                 <img src="assets/logo.jpg" alt="zenofy-logo">
@@ -40,17 +33,11 @@
             <div class="nav-links">
                 <a href="#"><i class="ri-store-fill"></i><p>SHOP</p></a>
                 <a href="#"><i class="ri-home-9-fill"></i><p>HOME</p></a>
-<<<<<<< Updated upstream
-                <a href="#"><i class="ri-user-6-fill"></i><p>PROFILE</p></a>
-            </div>
-            <i class="ri-shopping-cart-fill"></i>
-=======
                 <a href="#" class="prof"><i class="ri-user-6-fill"></i><p>PROFILE</p></a>
             </div>
             <div class="cart">
                 <i class="ri-shopping-cart-fill"></i>
             </div>
->>>>>>> Stashed changes
         </div>
             
         <!-- Mobile menu -->
@@ -65,6 +52,21 @@
             </div>
         </div>
     </header>
+
+    <div class="content">
+        <div class="NCcol1">
+            <h2>Items</h2>
+            <div class="cartitems" id="cartitems"></div> <!-- Add id="cartitems" -->
+            <button class="clear">Clear cart</button>
+        </div>
+        <div class="NCcol2">
+            <h2>Summary</h2>
+            <div class="sumproducts" id="sumproducts"></div> <!-- Add id="sumproducts" -->
+            <div class="total" id="total"></div> <!-- Add id="total" -->
+            <button class="check">Checkout</button>
+        </div>
+        <img class="background" src="assets/Checkout.png" alt="Checkout">
+    </div>    
 
     <footer>
         <div class="row1">
@@ -109,21 +111,6 @@
         </div>
     </footer>    
 
-    <!-- toggling mobile menu -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const mobileMenu = document.querySelector('.mobile-menu');
-            const closeMenu = document.querySelector('.close-menu');
-
-            menuToggle.addEventListener('click', () => {
-                mobileMenu.classList.add('show');
-            });
-
-            closeMenu.addEventListener('click', () => {
-                mobileMenu.classList.remove('show');
-            });
-        });
-    </script>
+    <script src="JS/Ncart.js"></script>
 </body>
 </html>
