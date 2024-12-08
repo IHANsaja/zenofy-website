@@ -58,48 +58,61 @@ function updateStars() {
   // Call the function to update the stars
   updateStars();
 
-  const fileInput = document.getElementById('fileInput');
-  const uploadButton = document.getElementById('uploadButton');
-  const imagePreview = document.getElementById('imagePreview');   
-  
-  
-  uploadButton.addEventListener('click', () => {
-      const file = fileInput.files[0];
-  
-      if (file) {
-          const reader = new FileReader();
-  
-          reader.onload = (e) => {
-              const img = document.createElement('img');
-              img.src = e.target.result;
-              imagePreview.appendChild(img); 
-  
-              imagePreview.style.display = 'block';
-          };
-  
-          reader.readAsDataURL(file);
-      }
-  });
+function triggerFileInput() {
+    document.getElementById('fileInput').click();
+}
 
-  const ratingLabels = document.querySelectorAll('.rating label');
+document.getElementById('fileInput').addEventListener('change', (event) => {
+    const files = event.target.files;
 
-ratingLabels.forEach((label, index) => {
-  label.addEventListener('mouseover', () => {
-    for (let i = 0; i <= index; i++) {
-      ratingLabels[i].style.color = 'gold';
+    // Limit to 3 images
+    if (files.length > 3) {
+        alert('You can only upload 3 images.');
+        return;
     }
-  });
 
-  label.addEventListener('mouseout', () => {
-    const selectedRating = document.querySelector('input[name="rating"]:checked');
-    const selectedIndex = Array.from(ratingLabels).indexOf(selectedRating.nextElementSibling);
+    const imageContainers = document.querySelectorAll('.small-img');
 
-    for (let i = 0; i < ratingLabels.length; i++) {
-      if (i <= selectedIndex) {
-        ratingLabels[i].style.color = 'gold';
-      } else {
-        ratingLabels[i].style.color = 'black'; // Or any default color
-      }
+    // Display the selected images
+    for (let i = 0; i < files.length; i++) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            imageContainers[i].querySelector('img').src = e.target.result;
+        };
+        reader.readAsDataURL(files[i]);
     }
+});
+
+function openPopUp() {
+  document.getElementById("popup-container").style.display = "flex";
+}
+
+function closePopUp() {
+  document.getElementById("popup-container").style.display = "none";
+}
+
+document.querySelectorAll('.review-option').forEach(option => {
+  option.addEventListener('click', () => {
+      option.classList.toggle('selected');
+      const input = option.querySelector('input');
+      input.disabled = !option.classList.contains('selected');
   });
 });
+
+const stars = document.querySelectorAll('.starpopup');
+const ratingValue = document.getElementById('rating-value');
+
+stars.forEach(starpopup => {
+  starpopup.addEventListener('click', () => {
+        const value = starpopup.getAttribute('data-value');
+        ratingValue.value = value;
+        stars.forEach(s => {
+            if (s.getAttribute('data-value') <= value) {
+                s.classList.add('selected');
+            } else {
+                s.classList.remove('selected');
+            }
+        });
+    });
+});
+

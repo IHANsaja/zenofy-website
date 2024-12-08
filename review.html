@@ -34,7 +34,7 @@
 
             <div class="mid-container">
                 <div class="mc-text">Recent Reviews</div>
-                <button class="add-review-button">ADD REVIEW</button>
+                <button class="add-review-button" onclick="openPopUp()">ADD REVIEW</button>
             </div>
 
             <div class="review-container">
@@ -121,7 +121,7 @@
                     <div class="review-title">Professionalism of the service</div>
                     <div class="review-box">
                         <div class="review-row">
-                            <div class="review-percentage">80%</div>
+                            <div class="review-percentage">90%</div>
                             <div class="review-average">AVERAGE:
                                 <div class="status">GREAT</div>
                             </div>
@@ -147,33 +147,89 @@
         </div>
 
     </div>
-
-    <div class="popup-add-review" style="display: none;">
-        
-    </div>
     
-    <div class="popup-container">
+    <div class="popup-container" id="popup-container">
         <div class="left-popup">
-            <div class="preview-1">
-                <img class="uploadicon" src="upload.png">
+            <div class="upload-image" onclick="triggerFileInput()">
+                <div class="upload-icon"><img src="upload.png" alt="upload-icon"></div>
+                <div class="upload-text">Upload Your Image</div>
             </div>
-            <div class="image-row">
-                <div class="preview-2"></div>
-                <div class="preview-3"></div>
-                <div class="preview-4"></div>
+            <input type="file" id="fileInput" style="display: none;">
+            <div class="small-icon-row">
+                <div class="small-img1">
+                    <img src="#" alt="" id="idimg1">
+                </div>
+                <div class="small-img2">
+                    <img src="#" alt="" id="idimg2">
+                </div>
+                <div class="small-img3" onclick="">
+                    <img src="#" alt="" id="idimg3">
+                </div>
             </div>
-            <div class="rating">
-                <input type="radio" name="rating" id="star5" value="5">
-                <label for="star5">&#9733;</label>
-                <input type="radio" name="rating" id="star4" value="4">
-                <label for="star4">&#9733;</label>
-                <input type="radio" name="rating" id="star3" value="3">
-                <label for="star3">&#9733;</label>
-                <input type="radio" name="rating" id="star2" value="2">
-                <label for="star2">&#9733;</label>
-                <input type="radio" name="rating" id="star1" value="1">
-                <label for="star1">&#9733;</label>
+            <div class="user-rating-popup">
+                <div class="user-rating-stars-popup">
+                    <input type="hidden" name="rating" id="rating-value">
+                    <span class="starpopup" data-value="1">&#9733;</span>
+                    <span class="starpopup" data-value="2">&#9733;</span>
+                    <span class="starpopup" data-value="3">&#9733;</span>
+                    <span class="starpopup" data-value="4">&#9733;</span>
+                    <span class="starpopup" data-value="5">&#9733;</span>
+                </div>
             </div>
+        </div>
+        <div class="right-popup">
+            <div class="close-button-popup">
+                <img src="close-icon.png" class="icon-close-popup" onclick="closePopUp()">
+            </div>
+            <div class="review-table">
+                <table>
+                    <colgroup>
+                        <col style="width: auto;"> <!-- First column adjusts to content -->
+                        <col style="width: 100%;"> <!-- Second column takes up remaining space -->
+                    </colgroup>
+                    <tr>
+                        <td>Title</td>
+                        <td><input type="text" id="title"></td>
+                    </tr>
+                    <tr>
+                        <td>Message</td>
+                        <td><textarea id="message"></textarea>
+                            <script>
+                                document.getElementById("message").style.resize = "none";
+                            </script>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="review-types-container">
+                <div class="review-option" id="professional-service">
+                    <img src="professional_service_icon.png" alt="Professional Service Icon">
+                    <input type="hidden" name="review[]" value="professional-service" disabled>
+                    <label>Professional Service</label>
+                </div>
+                <div class="review-option" id="efficient-service">
+                    <img src="efficient_service_icon.png" alt="Efficient Service Icon">
+                    <input type="hidden" name="review[]" value="efficient-service" disabled>
+                    <label>Efficient Service</label>
+                </div>
+                <div class="review-option" id="fast-response">
+                    <img src="fast_response_icon.png" alt="Professional Service Icon">
+                    <input type="hidden" name="review[]" value="fast-response" disabled>
+                    <label>Fast Response</label>
+                </div>
+                <div class="review-option" id="timeliness">
+                    <img src="timeliness_icon.png" alt="Timeliness Icon">
+                    <input type="hidden" name="review[]" value="timeliness" disabled>
+                    <label>Timeliness</label>
+                </div>
+                <div class="review-option" id="supportive-staff">
+                    <img src="supportive_staff_icon.png" alt="Supportive Staff Icon">
+                    <input type="hidden" name="review[]" value="supportive-staff" disabled>
+                    <label>Supportive Staff</label>
+                </div>
+                
+            </div>
+            <input type="submit" id="review-submit" class="submit-button">
         </div>
     </div>
 </body>
