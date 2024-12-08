@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+        </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Reviews</title>
+    <link rel="stylesheet" href="CSS/review.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="JS/review.js" defer></script>
+</head>
+
+<header>
+
+</header>
+
+<body>
+    <div class="container">
+        <div class="left-container">
+            <div class="top-container">
+                <button class="nav-arrow-left" onclick=""><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></button>
+                <div class="review-display">
+                    <div class="title-display">CUSTOMER REVIEWS</div>
+                    <div class="ovr-rating">5.0</div>
+                    <div class="rating"></div>
+                    <div class="no-reviews">(108 reviews)</div>
+                </div>
+            </div>
+
+            <div class="mid-container">
+                <div class="mc-text">Recent Reviews</div>
+                <button class="add-review-button">ADD REVIEW</button>
+            </div>
+
+            <div class="review-container">
+                <table>
+                    <tr>
+                        <td  rowspan="2">
+                            <div class="profile-pic"><img src="pfp.png"></div>
+                        </td>
+                        <td>
+                            <div class="username">USERname123</div>
+                            <div class="date-time-container">
+                                <div class="date-review">2024/01/23</div>
+                                <div class="time-review">4.45PM</div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="user-rating-stars">
+                                <span class="star" style="color: yellow;">★</span>
+                                <span class="star" style="color: yellow;">★</span>
+                                <span class="star" style="color: yellow;">★</span>
+                                <span class="star" style="color: yellow;">★</span>
+                                <span class="star" style="color: gray;">★</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="user-rating-text">4.0</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <div class="user-comment">
+                                The projector I purchased from Zenofy exceeded my expectations. The picture quality is stunning, with vibrant colors and sharp resolution, even in bright rooms. It was easy to set up and works perfectly for both movies and presentations.
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    
+        <div class="right-container">
+            <div class="dark-box">
+                <div class="db-topic">REVIEW ANALYZER</div>
+    
+                <div class="review-field">
+                    <div class="review-title">Professionalism of the service</div>
+                    <div class="review-box">
+                        <div class="review-row">
+                            <div class="review-percentage">100%</div>
+                            <div class="review-average">AVERAGE:
+                                <div class="status">GREAT</div>
+                            </div>
+                        </div>
+                        <div class="review-bar"></div>
+                    </div>
+                </div>
+    
+                <div class="review-field">
+                    <div class="review-title">Professionalism of the service</div>
+                    <div class="review-box">
+                        <div class="review-row">
+                            <div class="review-percentage">30%</div>
+                            <div class="review-average">AVERAGE:
+                                <div class="status">GREAT</div>
+                            </div>
+                        </div>
+                        <div class="review-bar"></div>
+                    </div>
+                </div>
+    
+                <div class="review-field">
+                    <div class="review-title">Professionalism of the service</div>
+                    <div class="review-box">
+                        <div class="review-row">
+                            <div class="review-percentage">50%</div>
+                            <div class="review-average">AVERAGE:
+                                <div class="status">GREAT</div>
+                            </div>
+                        </div>
+                        <div class="review-bar"></div>
+                    </div>
+                </div>
+    
+                <div class="review-field">
+                    <div class="review-title">Professionalism of the service</div>
+                    <div class="review-box">
+                        <div class="review-row">
+                            <div class="review-percentage">80%</div>
+                            <div class="review-average">AVERAGE:
+                                <div class="status">GREAT</div>
+                            </div>
+                        </div>
+                        <div class="review-bar"></div>
+                    </div>
+                </div>
+    
+                <div class="review-field">
+                    <div class="review-title">Professionalism of the service</div>
+                    <div class="review-box">
+                        <div class="review-row">
+                            <div class="review-percentage">100%</div>
+                            <div class="review-average">AVERAGE:
+                                <div class="status">GREAT</div>
+                            </div>
+                        </div>
+                        <div class="review-bar"></div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+
+    </div>
+
+    <div class="popup-add-review" style="display: none;">
+        
+    </div>
+    
+    <div class="popup-container">
+        <div class="left-popup">
+            <div class="preview-1">
+                <img class="uploadicon" src="upload.png">
+            </div>
+            <div class="image-row">
+                <div class="preview-2"></div>
+                <div class="preview-3"></div>
+                <div class="preview-4"></div>
+            </div>
+            <div class="rating">
+                <input type="radio" name="rating" id="star5" value="5">
+                <label for="star5">&#9733;</label>
+                <input type="radio" name="rating" id="star4" value="4">
+                <label for="star4">&#9733;</label>
+                <input type="radio" name="rating" id="star3" value="3">
+                <label for="star3">&#9733;</label>
+                <input type="radio" name="rating" id="star2" value="2">
+                <label for="star2">&#9733;</label>
+                <input type="radio" name="rating" id="star1" value="1">
+                <label for="star1">&#9733;</label>
+            </div>
+        </div>
+    </div>
+</body>
+
+<footer>
+
+</footer>
+</html>
