@@ -167,6 +167,12 @@
     margin-left: 20px;
     margin-right: 30px;
 }
+.products a{
+    color: #362837;
+    text-decoration: none;
+    rotate: -90deg;
+    font-size: 30px;
+}
 .cards{
     display: flex;
     flex-direction: row;
@@ -231,6 +237,9 @@
     font-weight: bold;
     padding-left: 7px;
     
+}
+.price i{
+    color: #362837;
 }
 .popular{
     display: flex;
