@@ -100,7 +100,7 @@ header {
     padding: 0;
     margin: 0;
     position: absolute;
-    top: 50px;
+    top: 42.5px;
     left: 0;
     background-color: #201520;
     border-radius: 8px;
@@ -131,6 +131,13 @@ header {
 .nav .dropdown-menu li a:hover {
     background-color: #342534;
     color: #fff;
+}
+
+.nav i.ri-menu-4-line:hover + .dropdown-menu,
+.nav .dropdown-menu:hover {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
 .nav i.ri-shopping-cart-fill{
