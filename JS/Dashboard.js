@@ -38,3 +38,38 @@ const salesChart = new Chart(ctxSales, {
         }
     }
 });
+
+//sidebar funtioning
+
+function showContent(tabId) {
+    const contents = document.querySelectorAll('.tab-content');
+    contents.forEach(content => content.style.display = 'none');
+
+    const tabs = document.querySelectorAll('.tab');
+    tabs.forEach(tab => tab.classList.remove('active'));
+
+    document.getElementById(tabId).style.display = 'block';
+
+    event.target.classList.add('active');
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    showContent('analytics');
+});
+
+const sidebarTabs = document.querySelectorAll(".sidebar ul li");
+
+function handleTabClick(event) {
+    sidebarTabs.forEach(tab => tab.classList.remove("active"));
+
+    event.currentTarget.classList.add("active");
+}
+sidebarTabs.forEach(tab => {
+    tab.addEventListener("click", handleTabClick);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    sidebarTabs[0].classList.add("active");
+});
+
+//sidebar ends here

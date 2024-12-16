@@ -81,10 +81,103 @@ header .usericon-container i{
     font-size: 20px;
 }
 
-.sidebar{
+.sidebar {
     width: 200px;
+    height: 100%;
     background-color: #362837;
-    color: var(--text);
+    color: var(--background);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 10%;
+}
+
+.sidebar ul li {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 20px;
+    color: #DED6DE;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 30px 0px 0px 30px;
+    transition: background 0.4s ease, color 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sidebar ul li:hover {
+    background: linear-gradient(to right, #ffffff, #DED6DE);
+    color: #362837; 
+    border-radius: 30px 0px 0px 30px;
+    transform: translateX(5px) scale(1.05); 
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar ul li.active {
+    background: linear-gradient(to right, #ffffff, #DED6DE);
+    color: #362837;
+    font-weight: bold;
+    border-radius: 30px 0px 0px 30px;
+    transform: translateX(5px);
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.logout-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #DED6DE;
+    color: var(--background);
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    margin: 0 auto;
+    margin-bottom: 30%;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, font-size 0.3s ease-in-out;
+    width: 80%;
+    text-transform: uppercase;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.logout-btn i {
+    font-size: 18px;
+    transition: 0.4s ease-in-out;
+}
+
+.logout-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+    font-size: 14px;
+}
+
+.logout-btn:hover i {
+    transform: translateX(20%);
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+    background-color: #FFF;
+    border-radius: 8px;
+}
+
+.tab-content h2 {
+    color: var(--background);
+    margin-bottom: 20px;
 }
 
 .stats {
@@ -116,10 +209,18 @@ header .usericon-container i{
 }
 
 .chart-container {
+    display: flex;
+    flex-direction: column;
     flex: 1;
     background-color: #DED6DE;
     padding: 20px;
     border-radius: 8px;
+    height: 50vh;
+    align-items: center;
+}
+
+#salesChart{
+    padding: 20px;
 }
 
 .recent-orders {
