@@ -22,6 +22,7 @@
         </div>
     </header>
     <div class="dashboard">
+        <!--Sidebar Starts here-->
         <div class="sidebar">
             <ul>
                 <li class="tab active" onclick="showContent('analytics')"><i class="ri-dashboard-horizontal-fill"></i><p>Analytics</p></li>
@@ -34,6 +35,7 @@
                 Log Out
             </button>
         </div>
+        <!--Sidebar Ends here-->
         <div class="main-content">
             <!-- Analytics Content -->
             <div class="tab-content" id="analytics">
@@ -62,38 +64,40 @@
                         <canvas id="salesChart"></canvas>
                     </div>
                 </div>
-                <div class="recent-orders">
-                    <h3>Recent Orders</h3>
-                    <table>
-                        <tr>
-                            <th>Order ID</th>
-                            <th>Product Name</th>
-                            <th>Quantity</th>
-                            <th>Price</th>
-                            <th>Status</th>
-                        </tr>
-                        <tr>
-                            <td>#000001</td>
-                            <td>Electric Screen</td>
-                            <td>2</td>
-                            <td>$300</td>
-                            <td>Pending</td>
-                        </tr>
-                        <tr>
-                            <td>#000002</td>
-                            <td>Manual Screen</td>
-                            <td>1</td>
-                            <td>$300</td>
-                            <td>Pending</td>
-                        </tr>
-                        <tr>
-                            <td>#000003</td>
-                            <td>Projector Stand</td>
-                            <td>10</td>
-                            <td>$300</td>
-                            <td>Completed</td>
-                        </tr>
-                    </table>
+                <div class="details">
+                    <div class="recent-orders">
+                        <h3>Recent Orders</h3>
+                        <table>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Product Name</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                <th>Status</th>
+                            </tr>
+                            <tr>
+                                <td>#000001</td>
+                                <td>Electric Screen</td>
+                                <td>2</td>
+                                <td>$300</td>
+                                <td>Pending</td>
+                            </tr>
+                            <tr>
+                                <td>#000002</td>
+                                <td>Manual Screen</td>
+                                <td>1</td>
+                                <td>$300</td>
+                                <td>Pending</td>
+                            </tr>
+                            <tr>
+                                <td>#000003</td>
+                                <td>Projector Stand</td>
+                                <td>10</td>
+                                <td>$300</td>
+                                <td>Completed</td>
+                            </tr>
+                        </table>
+                    </div>
                     <div class="best-item">
                         <i class="ri-star-smile-fill"></i>
                         best selling item displays here
