@@ -42,16 +42,25 @@
                 <h2>Analytics</h2>
                 <div class="stats">
                     <div class="stat-item">
-                        <h3>Total Products sold</h3>
-                        <p>290</p>
+                        <i class="ri-archive-stack-fill"></i>
+                        <div class="stat-text">
+                            <h3>Total Products sold</h3>
+                            <p>290</p>
+                        </div>
                     </div>
                     <div class="stat-item">
-                        <h3>New clients</h3>
-                        <p>410</p>
+                        <i class="ri-team-fill"></i>
+                        <div class="stat-text">
+                            <h3>New clients</h3>
+                            <p>410</p>
+                        </div>
                     </div>
                     <div class="stat-item-reverse">
-                        <h3>This month earnings</h3>
-                        <p>$578.25</p>
+                        <i class="ri-money-dollar-circle-fill"></i>
+                        <div class="stat-text"> 
+                            <h3>This month earnings</h3>
+                            <p>$578.25</p>
+                        </div>
                     </div>
                 </div>
                 <div class="charts">
@@ -67,36 +76,40 @@
                 <div class="details">
                     <div class="recent-orders">
                         <h3>Recent Orders</h3>
-                        <table>
-                            <tr>
-                                <th>Order ID</th>
-                                <th>Product Name</th>
-                                <th>Quantity</th>
-                                <th>Price</th>
-                                <th>Status</th>
-                            </tr>
-                            <tr>
-                                <td>#000001</td>
-                                <td>Electric Screen</td>
-                                <td>2</td>
-                                <td>$300</td>
-                                <td>Pending</td>
-                            </tr>
-                            <tr>
-                                <td>#000002</td>
-                                <td>Manual Screen</td>
-                                <td>1</td>
-                                <td>$300</td>
-                                <td>Pending</td>
-                            </tr>
-                            <tr>
-                                <td>#000003</td>
-                                <td>Projector Stand</td>
-                                <td>10</td>
-                                <td>$300</td>
-                                <td>Completed</td>
-                            </tr>
-                        </table>
+                        <table class="status-table">
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Product Name</th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#000001</td>
+                                    <td>Electric Screen</td>
+                                    <td>2</td>
+                                    <td>$300</td>
+                                    <td class="status">Pending</td>
+                                </tr>
+                                <tr>
+                                    <td>#000002</td>
+                                    <td>Manual Screen</td>
+                                    <td>1</td>
+                                    <td>$300</td>
+                                    <td class="status">Pending</td>
+                                </tr>
+                                <tr>
+                                    <td>#000003</td>
+                                    <td>Projector Stand</td>
+                                    <td>10</td>
+                                    <td>$300</td>
+                                    <td class="status">Completed</td>
+                                </tr>
+                            </tbody>
+                        </table>                        
                     </div>
                     <div class="best-item">
                         <img src="assets/logo.jpg" alt="Best Selling Product" class="product-image">

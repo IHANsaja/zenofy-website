@@ -94,6 +94,33 @@ header .usericon-container i{
     padding: 20px;
     text-align: center;
     border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.stat-item i{
+    font-size: 50px;
+}
+
+.stat-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.stat-text h3{
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.stat-text p{
+    font-size: 30px;
+    font-weight: 500;
+    color: #478E28;
 }
 
 .stat-item-reverse {
@@ -103,7 +130,41 @@ header .usericon-container i{
     padding: 20px;
     text-align: center;
     border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
+
+.stat-item-reverse i{
+    font-size: 50px;
+}
+
+.stat-item-reverse  .stat-text p{
+    font-size: 30px;
+    font-weight: 500;
+    color: #478E28;
+    filter: brightness(1.5);
+}
+
+.status-pending {
+    color: #FFD51E;
+    background-color: #362837;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.status-canceled {
+    color: #BD2E31;
+    font-weight: bold;
+}
+
+.status-completed {
+    color: #478E28;
+    font-weight: bold;
+}
+
 
 #analytics{
     overflow-y: hidden;
@@ -333,7 +394,7 @@ th, td {
 
 .tab-content {
     display: none;
-    padding: 20px;
+    padding: 5px;
     background-color: #FFF;
     border-radius: 8px;
 }
