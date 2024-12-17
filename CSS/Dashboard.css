@@ -90,6 +90,7 @@ header .usericon-container i{
 .stat-item {
     flex: 1;
     background-color: #DED6DE;
+    color: #362837;
     padding: 20px;
     text-align: center;
     border-radius: 8px;
@@ -118,6 +119,7 @@ header .usericon-container i{
     flex-direction: column;
     flex: 1;
     background-color: #DED6DE;
+    color: #362837;
     padding: 20px;
     border-radius: 8px;
     height: 50vh;
@@ -146,19 +148,93 @@ header .usericon-container i{
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
+    color: #362837;
 }
 
-.best-item{
+.best-item {
+    position: relative;
     width: 35%;
-    background-color: #DED6DE;
+    background: linear-gradient(145deg, #0E040E, #362837);
+    color: #DED6DE;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 12px;
     height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    overflow: hidden; /* Keeps animation within the box */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.best-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+}
+
+.best-item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #FFD700; /* Golden border for emphasis */
+    margin-bottom: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 100;
+}
+
+.best-item img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 15px rgba(255, 215, 0, 0.6); 
+}
+
+.best-item .product-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 5px 0;
+    color: #FFD700;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.best-item p {
+    font-size: 16px;
+    color: #DED6DE;
+    margin-top: 5px;
+    font-style: italic;
+    opacity: 0.8; 
+}
+
+.best-item::before {
+    content: '';
+    position: absolute;
+    top: -150%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1) 40%, transparent 70%);
+    transform: translateX(-50%) rotate(45deg);
+    opacity: 0.7;
+    animation: glass-slide 8s infinite;
+}
+
+@keyframes glass-slide {
+    0% {
+        top: -150%;
+    }
+    50% {
+        top: 150%;
+    }
+    100% {
+        top: -150%;
+    }
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
+    color: #362837;
 }
 
 th, td {
@@ -170,7 +246,7 @@ th, td {
 
 .sidebar {
     width: 200px;
-    height: calc(100vh - 60px);
+    height: 100%;
     background-color: #362837;
     color: var(--background);
     display: flex;
@@ -237,6 +313,7 @@ th, td {
     width: 80%;
     text-transform: uppercase;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30%;
 }
 
 .logout-btn i {
