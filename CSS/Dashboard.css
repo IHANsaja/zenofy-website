@@ -81,9 +81,96 @@ header .usericon-container i{
     font-size: 20px;
 }
 
+.stats {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.stat-item {
+    flex: 1;
+    background-color: #DED6DE;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.stat-item-reverse {
+    flex: 1;
+    background-color: var(--background);
+    color: var(--text);
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+#analytics{
+    overflow-y: hidden;
+}
+
+.charts {
+    display: flex;
+    gap: 20px;
+}
+
+.chart-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background-color: #DED6DE;
+    padding: 20px;
+    border-radius: 8px;
+    height: 50vh;
+    align-items: center;
+}
+
+#salesChart{
+    padding: 20px;
+}
+
+.details {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.recent-orders{
+    width: 65%;
+    background-color: #DED6DE;
+    margin-right: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.best-item{
+    width: 35%;
+    background-color: #DED6DE;
+    padding: 20px;
+    border-radius: 8px;
+    height: 20vh;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+/*Sidebar*/
+
 .sidebar {
     width: 200px;
-    height: 100%;
+    height: calc(100vh - 60px);
     background-color: #362837;
     color: var(--background);
     display: flex;
@@ -145,7 +232,6 @@ header .usericon-container i{
     border-radius: 4px;
     padding: 10px 15px;
     margin: 0 auto;
-    margin-bottom: 30%;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, font-size 0.3s ease-in-out;
     width: 80%;
@@ -179,62 +265,3 @@ header .usericon-container i{
     color: var(--background);
     margin-bottom: 20px;
 }
-
-.stats {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 20px;
-}
-
-.stat-item {
-    flex: 1;
-    background-color: #DED6DE;
-    padding: 20px;
-    text-align: center;
-    border-radius: 8px;
-}
-
-.stat-item-reverse {
-    flex: 1;
-    background-color: var(--background);
-    color: var(--text);
-    padding: 20px;
-    text-align: center;
-    border-radius: 8px;
-}
-
-.charts {
-    display: flex;
-    gap: 20px;
-}
-
-.chart-container {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    background-color: #DED6DE;
-    padding: 20px;
-    border-radius: 8px;
-    height: 50vh;
-    align-items: center;
-}
-
-#salesChart{
-    padding: 20px;
-}
-
-.recent-orders {
-    margin-top: 20px;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-th, td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #ccc;
-}
-
