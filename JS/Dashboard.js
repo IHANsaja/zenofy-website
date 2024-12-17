@@ -28,7 +28,7 @@ const salesChart = new Chart(ctxSales, {
         labels: ['Electric Screen', 'Manual Screen', 'Tripod Screen', 'Projector Stand', 'Projector Lift'],
         datasets: [{
             data: [30, 20, 20, 15, 15],
-            backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF']
+            backgroundColor: ['#BD2E31', '#176ba3', '#FFD51E', '#478E28', '#502a9b']
         }]
     },
     options: {
