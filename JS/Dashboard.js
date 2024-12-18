@@ -40,15 +40,13 @@ const salesChart = new Chart(ctxSales, {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Function to update status styles
     function updateStatusStyles() {
-        const statusCells = document.querySelectorAll('.status'); // Select all cells with the 'status' class
+        const statusCells = document.querySelectorAll('.status'); 
         
         statusCells.forEach(cell => {
-            const statusText = cell.textContent.trim().toLowerCase(); // Get the text content and normalize it
-            cell.classList.remove('status-pending', 'status-canceled', 'status-completed'); // Reset styles
-            
-            // Apply appropriate class based on the status
+            const statusText = cell.textContent.trim().toLowerCase();
+            cell.classList.remove('status-pending', 'status-canceled', 'status-completed'); 
+           
             if (statusText === 'pending') {
                 cell.classList.add('status-pending');
             } else if (statusText === 'canceled') {
@@ -59,13 +57,11 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Initial update for status styles
     updateStatusStyles();
 
-    // Watch for changes in the table using MutationObserver
-    const table = document.querySelector('.status-table'); // Replace '.status-table' with your table's class or ID
+    const table = document.querySelector('.status-table');
     const observer = new MutationObserver(updateStatusStyles);
-    observer.observe(table, { childList: true, subtree: true }); // Observe for changes in child elements
+    observer.observe(table, { childList: true, subtree: true });
 });
 
 
