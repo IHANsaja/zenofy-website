@@ -19,7 +19,8 @@ Zenofy provides a wide range of premium accessories for projectors, including sc
 - **Wide Selection:** Accessories for all major projector brands.  
 - **High Quality:** Durable, performance-tested products.  
 - **Affordable Prices:** Get the best value for your money.  
-- **Fast Shipping:** Reliable and quick delivery services.  
+- **Fast Shipping:** Reliable and quick delivery services.
+- **Trusted by Customers:** Positive reviews for exceptional service.
 
 ---
 
