@@ -66,7 +66,7 @@ This repository is private and proprietary. The code is owned by **VIS2M** and w
 
 Need help finding the perfect accessory? Reach out to us:  
 📧 Email: support@zenofy.com  
-📞 Phone: +1 234 567 890  
+📞 Phone: +94 772896969  
 
 ---
 
