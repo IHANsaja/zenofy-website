@@ -47,7 +47,9 @@ Zenofy is powered by modern technologies to deliver a seamless shopping experien
 
 - **Responsive Design:** Optimized for desktop, tablet, and mobile.  
 - **Secure Payments:** Shop confidently with secure payment gateways.  
-- **Easy Navigation:** Intuitive site structure for a hassle-free shopping experience.  
+- **Easy Navigation:** Intuitive site structure for a hassle-free shopping experience.
+- **Quotation System:** Automated quotations for bulk orders (over 10 items per product) with email confirmation.
+- **Real-Time Inventory Updates:** Admins can add, remove, and edit product listings, ensuring the site reflects the latest stock.
 
 ---
 
