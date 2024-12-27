@@ -20,7 +20,7 @@ const incomeChart = new Chart(ctxIncome, {
     }
 });
 
-// Sales Analysis Charts
+// Sales Analysis Chart
 const ctxSales = document.getElementById('salesChart').getContext('2d');
 const salesChart = new Chart(ctxSales, {
     type: 'doughnut',
@@ -28,7 +28,7 @@ const salesChart = new Chart(ctxSales, {
         labels: ['Electric Screen', 'Manual Screen', 'Tripod Screen', 'Projector Stand', 'Projector Lift'],
         datasets: [{
             data: [30, 20, 20, 15, 15],
-            backgroundColor: ['#BD2E31', '#176ba3', '#FFD51E', '#478E28', '#502a9b']
+            backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF']
         }]
     },
     options: {
@@ -40,13 +40,15 @@ const salesChart = new Chart(ctxSales, {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
+    // Function to update status styles
     function updateStatusStyles() {
-        const statusCells = document.querySelectorAll('.status'); 
+        const statusCells = document.querySelectorAll('.status'); // Select all cells with the 'status' class
         
         statusCells.forEach(cell => {
-            const statusText = cell.textContent.trim().toLowerCase();
-            cell.classList.remove('status-pending', 'status-canceled', 'status-completed'); 
-           
+            const statusText = cell.textContent.trim().toLowerCase(); // Get the text content and normalize it
+            cell.classList.remove('status-pending', 'status-canceled', 'status-completed'); // Reset styles
+            
+            // Apply appropriate class based on the status
             if (statusText === 'pending') {
                 cell.classList.add('status-pending');
             } else if (statusText === 'canceled') {
@@ -57,11 +59,13 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // Initial update for status styles
     updateStatusStyles();
 
-    const table = document.querySelector('.status-table');
+    // Watch for changes in the table using MutationObserver
+    const table = document.querySelector('.status-table'); // Replace '.status-table' with your table's class or ID
     const observer = new MutationObserver(updateStatusStyles);
-    observer.observe(table, { childList: true, subtree: true });
+    observer.observe(table, { childList: true, subtree: true }); // Observe for changes in child elements
 });
 
 

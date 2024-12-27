@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin User Area</title>
+  <link rel="stylesheet" href="CSS/UserArea.css">
+</head>
+<body>
+      <div class="tabs">
+        <button id="home-tab" class="tab-btn active">Home</button>
+        <button id="shop-tab" class="tab-btn">Shop</button>
+      </div>
+
+      <section id="home-section" class="tab-con active">
+        <form id="home-form">
+          <label for="home-title">Title:</label>
+          <input type="text" id="home-title" placeholder="WELCOME TO ZENOFY">
+
+          <label for="home-description">Description:</label>
+          <textarea id="home-description" rows="5" placeholder="Enter the home description here..."></textarea>
+
+          <button type="submit">Save</button>
+        </form>
+      </section>
+
+      <section id="shop-section" class="tab-con">
+        <form id="shop-form">
+          <label for="shop-caption">Captions & Images</label>
+          <input type="text" id="shop-caption" placeholder="Top Affordable Product Prices in Sri Lanka for Every Budget">
+
+          <label for="shop-image">Upload Your Image:</label>
+          <input type="file" id="shop-image">
+
+          <label for="shop-image-caption">Image Caption:</label>
+          <input type="text" id="shop-image-caption" placeholder="Enter caption here...">
+
+          <button type="submit">Save</button>
+        </form>
+      </section>
+  </div>
+
+  <script src="JS/UserArea.js"></script>
+</body>
+</html>
