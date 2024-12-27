@@ -334,12 +334,17 @@
         });
     </script>
     <script>
-        // Save current title and description to local storage
-        const currentTopic = document.getElementById("topic").textContent;
-        const currentDescription = document.getElementById("description").textContent;
-
-        localStorage.setItem("topic", currentTopic);
-        localStorage.setItem("description", currentDescription);
+        document.addEventListener("DOMContentLoaded", () => {
+            let homeTitle = localStorage.getItem('homeTitle');
+            let homeDescription = localStorage.getItem('homeDescription');
+            if (homeTitle) {
+                document.getElementById('home-title').innerText = homeTitle;
+            }
+            if (homeDescription) {
+                document.getElementById('home-description').innerText = homeDescription;
+            }
+        });
     </script>
+    <script src="JS/Dashboard.js"></script>
 </body>
 </html>
