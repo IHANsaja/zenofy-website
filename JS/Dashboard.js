@@ -20,7 +20,7 @@ const incomeChart = new Chart(ctxIncome, {
     }
 });
 
-// Sales Analysis Chart
+// Sales Analysis Charts
 const ctxSales = document.getElementById('salesChart').getContext('2d');
 const salesChart = new Chart(ctxSales, {
     type: 'doughnut',
