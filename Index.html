@@ -64,8 +64,8 @@
         </div>
         <div class="wel1">
             <div class="topic">
-                <h1>WELCOME TO ZENOFY!</h1>
-                <h4>Zenofy specializes in providing top-tier projectors, projector screens, and related 
+                <h1 id="topic">WELCOME TO ZENOFY!</h1>
+                <h4 id="Description">Zenofy specializes in providing top-tier projectors, projector screens, and related 
                     accessories, catering to both home entertainment enthusiasts and professionals seeking 
                     superior visual solutions for presentations, classrooms, and conference rooms. Our products 
                     are designed to deliver exceptional image clarity, brightness, and durability, ensuring an 
@@ -332,6 +332,14 @@
                 mobileMenu.classList.remove('show');
             });
         });
+    </script>
+    <script>
+        // Save current title and description to local storage
+        const currentTopic = document.getElementById("topic").textContent;
+        const currentDescription = document.getElementById("description").textContent;
+
+        localStorage.setItem("topic", currentTopic);
+        localStorage.setItem("description", currentDescription);
     </script>
 </body>
 </html>
