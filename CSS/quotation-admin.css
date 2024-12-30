@@ -1,5 +1,16 @@
-#quotations-list {
-    margin: 20px;
+.quotation-topic {
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-size: x-large;
+    font-weight: 500;
+    background-color: #4E394F;
+    height: 50px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: fit-content;
+    max-width: 400px;
 }
 
 .quotation {
