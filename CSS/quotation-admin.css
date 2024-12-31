@@ -1,6 +1,7 @@
 .top-container {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 10px;
 }
 
 .quotation-topic {
@@ -17,6 +18,16 @@
     min-width: fit-content;
     max-width: 400px;
     width: 400px;
+}
+
+.total-quotations {
+    color: white;
+    font-family: "Roboto", sans-serif;
+    background-color: #BD2E31;
+    border-radius: 25px 0 0 25px;
+    width: 20%;
+    justify-content: center;
+    text-align: center;
 }
 
 .quotation {
@@ -52,7 +63,8 @@
     border-radius: 8px;
     padding: 15px;
     margin-right: 10px;
-    height: fit-content;
+    height: 40px;
+    align-items: center;
     font-family: "Kanit", sans-serif;
     color: white;
     font-size: large;
