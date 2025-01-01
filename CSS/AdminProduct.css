@@ -1,0 +1,58 @@
+.products-line {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.card {
+    width: 30%;
+    background-color: #eae6f3;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.card h3 {
+    font-size: 18px;
+    margin: 12px 0;
+}
+
+.card p {
+    font-size: 14px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.button {
+    width: 40%;
+    padding: 4px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #fff;
+}
+
+.button.delete {
+    background-color: #d9534f;
+}
+
+.button.edit {
+    background-color: #5cb85c;
+}
+
+.button:hover {
+    opacity: 0.9;
+}
