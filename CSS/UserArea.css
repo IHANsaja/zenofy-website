@@ -50,14 +50,6 @@ body {
   display: block;
 }
 
-.left{
-  display: flex;
-  flex-direction: column;
-}
-.right{
-  display: flex;
-  flex-direction: column;
-}
 form {
   display: flex;
   flex-direction: column;
@@ -74,6 +66,7 @@ form input, form textarea, form button {
   font-family: 'Roboto';
   font-size: medium;
   color: #ffffff;
+  width:100%;
 }
 
 form button {
@@ -87,7 +80,6 @@ form button {
   font-family: 'Roboto';
   font-weight: bold;
   font-size: medium;
-  margin-left: 80%;
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 15px;
@@ -96,6 +88,13 @@ form button {
 #shop-form{
   display: flex;
   flex-direction: row;
-  width: 50%;
+  width: 100%;
+}
+.details{
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+.tb{
 }
 
