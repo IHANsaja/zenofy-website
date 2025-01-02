@@ -54,13 +54,24 @@ body {
 }
 .input-group input {
     width: 100%;
+<<<<<<< Updated upstream
     padding: 12px 45px;
+=======
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 12px 12px 12px 40px;
+>>>>>>> Stashed changes
     border: none;
     border-radius: 25px;
     background: #40384a;
     color: #fff;
     font-size: 1rem;
     outline: none;
+<<<<<<< Updated upstream
+=======
+    box-sizing: border-box; 
+    animation: slideIn 0.5s ease-in-out;
+>>>>>>> Stashed changes
 }
 .input-group i {
     position: absolute;
@@ -78,6 +89,13 @@ body {
     font-size: 1rem;
     cursor: pointer;
     transition: background 0.3s;
+<<<<<<< Updated upstream
+=======
+    width: 100%;
+    max-width: 300px; 
+    margin: 0 auto;
+    display: block;
+>>>>>>> Stashed changes
 }
 .auth-button:hover {
     background: #856994;
@@ -152,9 +170,19 @@ body {
     .auth-button {
         font-size: 0.9rem;
         padding: 10px;
+<<<<<<< Updated upstream
+=======
+        width: 100%; 
+        max-width: 300px; 
+>>>>>>> Stashed changes
     }
     .input-group input {
         padding: 10px 40px;
         font-size: 0.9rem;
+<<<<<<< Updated upstream
+=======
+        width: 100%; 
+        max-width: 300px; 
+>>>>>>> Stashed changes
     }
 }
