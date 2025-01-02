@@ -6,6 +6,8 @@
 }
 
 .card {
+    display: flex;
+    flex-direction: column;
     width: 30%;
     background-color: #eae6f3;
     border-radius: 10px;
@@ -16,13 +18,14 @@
 
 .card img {
     width: 100%;
-    height: auto;
+    height: 50%;
     border-radius: 5px;
 }
 
 .card h3 {
     font-size: 18px;
     margin: 12px 0;
+    
 }
 
 .card p {
@@ -32,7 +35,7 @@
 .button-container {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 12px;
+
 }
 
 .button {
