@@ -55,7 +55,13 @@ body {
 .input-group input {
     width: 100%;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     padding: 12px 45px;
+=======
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 12px 12px 12px 40px;
+>>>>>>> Stashed changes
 =======
     max-width: 300px;
     margin: 0 auto;
@@ -68,7 +74,10 @@ body {
     font-size: 1rem;
     outline: none;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
     box-sizing: border-box; 
     animation: slideIn 0.5s ease-in-out;
 >>>>>>> Stashed changes
@@ -171,6 +180,11 @@ body {
         font-size: 0.9rem;
         padding: 10px;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+        width: 100%; 
+        max-width: 300px; 
+>>>>>>> Stashed changes
 =======
         width: 100%; 
         max-width: 300px; 
@@ -180,6 +194,11 @@ body {
         padding: 10px 40px;
         font-size: 0.9rem;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+        width: 100%; 
+        max-width: 300px; 
+>>>>>>> Stashed changes
 =======
         width: 100%; 
         max-width: 300px; 
