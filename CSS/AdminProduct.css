@@ -17,7 +17,7 @@
 }
 
 .card img {
-    width: 100%;
+    width: auto;
     height: 200px;
     border-radius: 5px;
 }
@@ -32,6 +32,7 @@
 }
 
 .button-container {
+    margin-top: 10px;
     display: flex;
     justify-content: space-between;
 
@@ -45,14 +46,15 @@
     cursor: pointer;
     font-size: 14px;
     color: #fff;
+    transition: opacity 0.4s ease;
 }
 
 .button.delete {
-    background-color: #d9534f;
+    background-color: #91181A;
 }
 
 .button.edit {
-    background-color: #5cb85c;
+    background-color: #306D15;
 }
 
 .button:hover {
