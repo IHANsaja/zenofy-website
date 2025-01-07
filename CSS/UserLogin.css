@@ -25,8 +25,10 @@ body {
     max-width: 90%;
 }
 .logo img {
-    width: 80px;
-    margin-bottom: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-top: 20px;
 }
 .logo {
     display: flex;
@@ -38,49 +40,31 @@ body {
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    margin-bottom: 30px;
 }
 .auth-title {
     color: #fff;
     font-size: 1.8rem;
     margin-bottom: 20px;
 }
-.auth-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
 .input-group {
     position: relative;
+    width: 100%;
+    margin-bottom: 20px;
 }
 .input-group input {
     width: 100%;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    padding: 12px 45px;
-=======
-    max-width: 300px;
+    max-width: 300px; /* Ensure the input does not exceed 300px */
     margin: 0 auto;
-    padding: 12px 12px 12px 40px;
->>>>>>> Stashed changes
-=======
-    max-width: 300px;
-    margin: 0 auto;
-    padding: 12px 12px 12px 40px;
->>>>>>> Stashed changes
+    padding: 12px 12px 12px 40px; /* Add padding to the left to make space for the icon */
     border: none;
     border-radius: 25px;
     background: #40384a;
     color: #fff;
     font-size: 1rem;
     outline: none;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> Stashed changes
-    box-sizing: border-box; 
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
     animation: slideIn 0.5s ease-in-out;
->>>>>>> Stashed changes
 }
 .input-group i {
     position: absolute;
@@ -98,13 +82,10 @@ body {
     font-size: 1rem;
     cursor: pointer;
     transition: background 0.3s;
-<<<<<<< Updated upstream
-=======
     width: 100%;
-    max-width: 300px; 
+    max-width: 300px; /* Ensure the button does not exceed 300px */
     margin: 0 auto;
     display: block;
->>>>>>> Stashed changes
 }
 .auth-button:hover {
     background: #856994;
@@ -120,7 +101,6 @@ body {
     color: #fff;
     text-decoration: underline;
 }
-
 .switch-mode {
     margin-top: 20px;
     color: #bbb;
@@ -137,7 +117,6 @@ body {
     text-decoration: underline;
     transform: scale(1.1);
 }
-
 /* Add animations */
 @keyframes fadeIn {
     from {
@@ -147,7 +126,6 @@ body {
         opacity: 1;
     }
 }
-
 @keyframes slideIn {
     from {
         transform: translateY(20px);
@@ -158,50 +136,29 @@ body {
         opacity: 1;
     }
 }
-
-.auth-title {
-    animation: fadeIn 1s ease-in-out;
-}
-
-.auth-button {
-    animation: slideIn 0.5s ease-in-out;
-}
-
-.input-group input {
-    animation: slideIn 0.5s ease-in-out;
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
     .auth-title {
         font-size: 1.5rem;
     }
+    .auth-box {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
     .auth-button {
         font-size: 0.9rem;
         padding: 10px;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-        width: 100%; 
-        max-width: 300px; 
->>>>>>> Stashed changes
-=======
-        width: 100%; 
-        max-width: 300px; 
->>>>>>> Stashed changes
+        width: 100%; /* Make the button full width on mobile */
+        max-width: 300px; /* Ensure the button does not exceed 300px */
     }
     .input-group input {
-        padding: 10px 40px;
+        padding: 12px 12px 12px 40px;
         font-size: 0.9rem;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-        width: 100%; 
-        max-width: 300px; 
->>>>>>> Stashed changes
-=======
-        width: 100%; 
-        max-width: 300px; 
->>>>>>> Stashed changes
+        width: 100%; /* Make the input full width on mobile */
+        max-width: 300px; /* Ensure the input does not exceed 300px */
     }
 }

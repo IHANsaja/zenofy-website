@@ -1,0 +1,357 @@
+.wel{
+    background-color:#B1A6B1;
+    display: flex;
+    flex-direction: column;
+    z-index: 0;
+    background-image: url("Assets/Home1.png");
+    height: 75vh;
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y:center ;
+    margin-top: 0;
+    background-size: 55%;
+}
+
+.search-con{
+    margin-top: 20px;
+}
+
+.search{
+    border: 2px solid #362837;
+    border-radius: 4px;
+    display: flex;
+    position: absolute;
+    right: 10px;
+    z-index: 1;
+
+}
+.search input{
+    border:none;
+    border-radius: 4px;
+    height: 18px;
+    background-color: #DED6DE;
+}
+.search input:focus{
+    outline:none;
+}
+.search input::placeholder{
+    padding-inline-start: 5px;
+    font-family: 'Kanit';
+    color:#201520 ;
+}
+.sicon{
+    border: 2px solid #362837 ;
+    display: flex;
+    position: absolute;
+    right: 10px;
+    border-radius: 4px;
+    align-items: center;
+    justify-content: center;
+    padding-left: 1.5px;
+    z-index: 3;
+}
+.wel1{
+    display: flex;
+    flex-direction: row;
+    margin-left: 20px;
+}
+.buy{
+    display: flex;
+    flex-direction: row;
+}
+.topic{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 20px;
+    text-align: justify;
+    z-index: 1;
+    margin-top: 50px;
+    color: #362837;
+}
+.topic h1{
+    font-family: 'kanit';
+    font-size: 64px;
+    width: 95%;
+}
+.topic h4{
+    font-family: 'Roboto';
+    width: 90%;
+    line-height: 20px;
+    margin-top: 20px;
+}
+.topic button{
+    width: 25%;
+    background-color: #478E28;
+    color: #FDFFFF;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    font-family: 'Kanit';
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 35px;
+}
+.items{
+    width: 50%;
+    background-color:yellow ;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    height: 20vh;
+    margin: 20px;
+}
+.collection{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.collection button{
+    border-radius:20px  ;
+    border: 2px solid white;
+    width:120px;
+    height: 40px;
+    background-color: none;
+    margin-left: 20px;
+    padding: 10px;
+    color: #FDFFFF;
+    background-color: transparent;
+}
+.collection h4{
+    color: #FDFFFF;
+    font-family: 'Roboto';
+    font-size: 20px;
+    padding: 20px;
+}
+.items2{
+    width: 50%;
+    background-color:green ;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    height: 20vh;
+    margin: 20px;
+}
+.collection2{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 0;
+}
+.collection2 button{
+    border-radius:20px  ;
+    border: 2px solid white;
+    width:120px;
+    height: 40px;
+    background-color: none;
+    margin-left: 20px;
+    padding: 10px;
+    color: #FDFFFF;
+    background-color: transparent;
+}
+.collection2 h4{
+    color: #FDFFFF;
+    font-family: 'Roboto';
+    font-size: 20px;
+    padding: 20px;
+}
+.products{
+    background-color:#B1A6B1 ;
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+}
+.products h2{
+    color: #0E040E;
+    margin-left: 20px;
+    margin-right: 30px;
+}
+.products a{
+    color: #362837;
+    text-decoration: none;
+    rotate: -90deg;
+    font-size: 30px;
+}
+.cards{
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    border: none;
+}
+.pro1{
+    display: flex;
+    flex-direction: column;
+    background-color: #DED6DE;
+    border-radius:4px ;
+    margin: 20px;
+    width: 17.3%;
+}
+.brand{
+    background-color: #B1A6B1;
+    color: #0E040E;
+    padding: 5px;
+    border-radius: 4px;
+    width: 55px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 15px;
+}
+.brand p{
+    font-family: 'Kanit';
+    font-weight: bold;
+}
+.pro1 img{
+    padding: 2.5px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 10px;
+    width: 85%;
+    height: 85%;
+}
+.details{
+    display: flex;
+    flex-direction: column;
+}
+.details h6{
+    color: #362837;
+    font-family: 'Kanit';
+    font-weight: bold;
+    font-size: large;
+    margin-left: 15px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+.price{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    padding: 5px;
+    margin-left: 15px;
+    margin-right: 10px;
+}
+.price p {
+    color: #362837;
+    font-family: 'Roboto';
+    font-weight: bold;
+    padding-left: 7px;
+    
+}
+.price i{
+    color: #362837;
+}
+.popular{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    padding-left: 20px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    background-color: #478E28;
+    color:#ffffff ;
+    font-family: 'Kanit';
+    font-weight: bold;
+    margin-left: 180px;
+    margin-right: 0;
+    margin-top: 0;
+}
+.rate{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    margin-left: 15px;
+    width: 50%; 
+}
+.rate img{
+    margin: 0;
+}.rate p{
+    font-weight: bold;
+    font-family: 'Roboto';
+    color: #362837;
+    padding: 5px;
+    margin-top: 1.5px;
+}
+.buypro{
+    margin-left: 15px;
+    margin-right: 10px;
+    margin-top: 10px; 
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+.buypro button{
+    background-color: #362837;
+    color: #ffffff;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 8px;
+    font-family: 'Roboto';
+    font-weight: bold;
+    border: none;
+    margin-right: 100px;
+}
+.buypro img{
+    width: 50%;
+    height: 50%;
+    margin-bottom: 15px;
+}
+.cat{
+    margin-left: 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.categories{
+    border: none;
+    background-color: #DED6DE;
+    border-radius:8px ;
+    border: none;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    padding-left: 45px;
+    padding-right: 45px;
+    margin-left: 15px;
+    margin-right: 0px;
+}
+.categories img{
+    width: 180px;
+    height: 180px;
+}
+.services{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.service1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 20%;
+    height: 20%;
+    padding: 50px;
+}
+.service1 h6{
+    font-weight: bold;
+    font-family: 'Roboto';
+    font-size: 24px;
+    color: #362837;
+}
+.service1 p{
+    font-family: 'Roboto';
+    font-size: 14px;
+    color: #362837;
+    font-weight: bold;
+    padding: 10px;
+}

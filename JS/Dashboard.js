@@ -103,3 +103,18 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 //sidebar ends here
+
+let topic = document.getElementById('topic');
+let description = document.getElementById('Description');
+let hometitle = document.getElementById('home-title');
+let homedescription = document.getElementById('home-description');
+
+function updateContent() {
+    hometitle.innerHTML = topic.value;
+    homedescription.innerHTML = description.value;
+    localStorage.setItem('homeTitle', topic.value);
+    localStorage.setItem('homeDescription', description.value);
+}
+
+topic.addEventListener('input', updateContent);
+description.addEventListener('input', updateContent);

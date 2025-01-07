@@ -1,0 +1,86 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+.quoSubmit{
+    background-color: #DED6DE;
+    border-radius: 12px;
+    padding: 10px 25px;
+    margin: 12px 15% 50px;
+    line-height: 58px;
+    color: #362837;
+    font-family: "Roboto";
+    
+}
+
+.quoSubmit input{
+    background-color: #FDFFFF;
+    border-color: #4E394F;
+    border-radius: 5px;
+    border-width: 0.3pt;
+    padding: 10px;
+    height: 24pt;
+    width: 100%;
+}
+
+.quoFormTitle{
+    margin: 0;
+    padding: 0;
+    font-family: "Kanit";
+    color: #362837;
+}
+
+.quoTable{
+    line-height: 50px;
+    font-size: 12pt;
+    font-weight: 700;
+    width: 100%;
+}
+.quoTable td:first-child {
+    width: 20%;
+}
+.quoTable td:last-child {
+    width: 80%;
+}
+
+.quoTable .addTitle{
+    vertical-align: top;
+}
+.quoTable #address {
+    height: 100px;
+    padding: 10px;
+    text-align: left;
+    vertical-align: top;
+    width: 100%;
+    background-color: #FDFFFF;
+    border-color: #4E394F;
+    border-radius: 5px;
+    border-width: 0.3pt;
+    margin: 10px 0px;
+}
+
+.quoSubBtn{
+    text-align: right;
+    padding: 0px;
+    margin: 10px 0px;
+}
+
+#quoSubmitBtn{
+    background-color: #306D15;
+    border: none;
+    color: #FFFFFF;
+    font-family: "Kanit";
+    font-weight: 700;
+    padding: 0px;
+    width: 150px;
+    font-size: 14pt;
+    height: 36px;
+    letter-spacing: 1.2pt;
+}
+
+.fa-chevron-circle-left{
+    margin: 20px 0px 0px 50px;
+    color: #4E394F;
+    font-size: 28pt;
+}

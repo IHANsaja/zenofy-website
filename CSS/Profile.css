@@ -1,0 +1,124 @@
+.profile{
+    display: flex;
+    flex-direction: row;
+    padding-left: 50px;
+    padding-top: 20px;
+    background-image: url("Assets/Profile.png");
+    height: 65vh;
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y:bottom ;
+}
+.image{
+    width: 30%;
+    padding: 50px;
+}
+.profileD1{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    padding-right: 50px;
+}
+.profileD1 h5{
+    font-size:30px ;
+    padding: 0;
+    color: #362837;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-family: 'Roboto';
+}
+.profileD1 p{
+    font-family: 'Roboto';
+    font-weight: bold;
+    color: black;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.profileD1 input{
+    width:70%;
+    padding: 10px;
+    border:2px solid black ;
+    border-radius: 8px;
+    margin-top: 0;
+    font-family: 'Roboto';
+    font-size: medium;
+    margin-bottom: 10px;
+}
+.profileD1 textarea{
+    width: 70%;
+    padding: 10px;
+    border:2px solid black ;
+    border-radius: 8px;
+    margin-top: 0;
+    height: 50px;
+    font-family: 'Roboto';
+    font-size: medium;
+}
+.profileD2{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    padding-right: 50px;
+    padding-top: 60px;
+}
+.profileD2 p{
+    font-family: 'Roboto';
+    font-weight: bold;
+    color: black;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.profileD2 input{
+    width: 70%;
+    padding: 10px;
+    border:2px solid black ;
+    border-radius: 8px;
+    margin-top: 0;
+    font-family: 'Roboto';
+    font-size: medium;
+    margin-bottom: 10px;
+}
+.profileD2 select{
+    width: 70%;
+    padding: 10px;
+    border:2px solid black ;
+    border-radius: 8px;
+    margin-top: 0;
+}
+.save{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+.save button{
+    margin-right: 500px;
+    background-color: #478E28;
+    border-radius: 8px;
+    padding-top:10px ;
+    padding-bottom: 10px;
+    padding-left: 70px;
+    padding-right: 70px;
+    border: none;
+    color:#FDFFFF ;
+    font-family: 'Kanit';
+    font-weight: bolder;
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+.nav-arrow-left {
+    display: flex;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    color: #362837;
+    background-color: white;
+    padding-right: 50px;
+    top: 10px;
+    font-size: xx-large;
+}
+.back{
+    padding: 20px;
+    
+    padding-left: 100px;
+    margin-left: 0;
+}

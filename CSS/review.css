@@ -1,13 +1,14 @@
 .nav-arrow-left {
-    position: absolute;
+    position: relative;
     display: flex;
     top: 20px;
+    left: 20px;
     border: none;
     cursor: pointer;
-    border-radius: 50%;
     color: #362837;
     background-color: white;
-    font-size: 24px;
+    font-size: 30px;
+    height: 30px;
 }
 
 .container {
@@ -195,17 +196,232 @@
     justify-content: center;
   }
   
-  .rating input {
+.rating input {
     display: none;
-  }
+}
   
-  .rating label {
+.rating label {
     font-size: 30px;
     cursor: pointer;
-  }
+}
   
-  .rating label:hover,   
+.rating label:hover,
   
-  .rating input:checked + label {
+.rating input:checked + label {
     color: gold;
-  }
+}
+
+.popup-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255, 0.9);
+    width: 60%;
+    display: none;
+    border: black solid;
+    border-radius: 10px;
+    padding: 30px;
+    z-index: 2;
+}
+
+.left-popup {
+    width: 40%;
+    padding: 10px;
+}
+
+.upload-image {
+    background-color: lightgray;
+    padding: 40px;
+    border-radius: 10px;
+    height: fit-content;
+    justify-content: center;
+}
+
+.upload-icon {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.upload-icon img {
+    width: 40%;
+}
+
+.upload-text {
+    text-align: center;
+    margin-top: 50px;
+    font-family: "Kanit", sans-serif;
+    color: #362837;
+    font-size: larger;
+}
+
+.small-icon-row {
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+
+.small-img1 {
+    background-color: lightgray;
+    width: 30%;
+    height: 100px;
+    border-radius: 10px;
+}
+
+.small-img2 {
+    background-color: lightgray;
+    width: 30%;
+    height: 100px;
+    border-radius: 10px;
+}
+
+.small-img3 {
+    background-color: lightgray;
+    width: 30%;
+    height: 100px;
+    border-radius: 10px;
+}
+
+.user-rating-stars-popup {
+    display: flex;
+    justify-content: space-between;
+}
+
+.starpopup {
+    font-size: 30px;
+    cursor: pointer;
+    color: #ccc;
+    transition: color 0.2s;
+}
+
+.starpopup:hover, .starpopup.selected {
+    color: #ff6600;
+}
+
+.right-popup {
+    padding: 10px;
+    width: 100%;
+}
+
+.close-button-popup {
+    display: flex;
+    justify-content: end;
+    margin-right: 5px;
+}
+
+.close-button-popup img {
+    transition: transform 1s;
+}
+
+.close-button-popup img:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.icon-close-popup {
+    width: 40px;
+}
+
+.review-table {
+    font-family: "Roboto", sans-serif;
+    color: #362837;
+    font-size: larger;
+    font-weight: 500;
+}
+
+.review-table td {
+    padding: 10px;
+    vertical-align: top;
+}
+
+.review-table input {
+    border-color: #362837;
+    background-color: #DED6DE;
+    box-shadow: none;
+    border-radius: 5px;
+    height: 25px;
+    width: 100%;
+    border-style: solid;
+    border-width: 1px;
+    padding: 7px;
+    font-family: "Kanit", sans-serif;
+    color: #362837;
+}
+
+.review-table textarea {
+    border-color: #362837;
+    background-color: #DED6DE;
+    box-shadow: none;
+    border-radius: 5px;
+    height: 150px;
+    width: 100%;
+    border-style: solid;
+    border-width: 1px;
+    padding: 7px;
+    font-family: "Kanit", sans-serif;
+    color: #362837;
+}
+
+.review-types-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.review-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    cursor: pointer;
+    width: calc(50% - 10px);
+    box-sizing: border-box;
+    transition: transform 0.2s;
+}
+
+.review-option:hover {
+    transform: scale(1.05);
+}
+
+label {
+    margin-left: 10px;
+}
+
+.review-option img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    filter: grayscale(1);
+    transition: filter 0.3s ease;
+} 
+
+.review-option.selected img {
+    filter: none;
+} 
+
+.review-option input {
+    display: none;
+}
+
+.submit-button {
+    background-color: #63AC43;
+    border: none;
+    border-radius: 8px;
+    padding: 15px;
+    margin-right: 10px;
+    font-family: "Kanit", sans-serif;
+    color: white;
+    font-size: large;
+    font-weight: 600;
+    display: flex;
+    justify-self: end;
+    transition: transform 1s;
+}
+
+.submit-button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+

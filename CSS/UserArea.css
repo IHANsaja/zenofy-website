@@ -1,0 +1,100 @@
+body {
+  font-family: 'Roboto';
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+}
+.tabs {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 150px;
+}
+.container{
+  background-color: #362837;
+  padding: 30px;
+  border-radius: 8px;
+  border: 1px solid #362837;
+  width: 100%;
+  margin-left: 10px;
+
+}
+.tab-btn {
+  padding: 15px 100px;
+  border: 1px solid #DED6DE;
+  border-bottom: none;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  background-color: #DED6DE;
+  cursor: pointer;
+  margin-right: 10px;
+  color: #362837;
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: large;
+}
+
+.tab-btn.active {
+  background-color: #362837;
+  color: #DED6DE;
+}
+
+.tab-con {
+  display: none;
+}
+
+.tab-con.active {
+  display: block;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin: 10px 0 5px;
+  color: #ffffff;
+}
+
+form input, form textarea, form button {
+  padding: 10px;
+  margin-bottom: 10px;
+  font-family: 'Roboto';
+  font-size: medium;
+  color: #ffffff;
+  width:100%;
+}
+
+form button {
+  background-color: #DED6DE;
+  color: #362837;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  margin: 30px;
+  width: 150px;
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: medium;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+#shop-form{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.details{
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+.tb{
+}
+
