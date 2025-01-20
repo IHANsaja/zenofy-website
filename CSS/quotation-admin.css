@@ -93,3 +93,96 @@
     font-size: 30px;
     height: 30px;
 }
+
+.top-ribbon {
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #DED6DE;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #362837;
+    font-family: "Roboto", sans-serif;
+    margin-top: 30px;
+}
+
+.details {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #DED6DE;
+    border-radius: 5px;
+    display: flex;
+}
+
+.details-table {
+    width: 60%;
+    border-spacing: 10px;
+}
+
+.details-table th {
+    text-align: left;
+}
+
+.details tbody tr {
+    margin-bottom: 10px;
+}
+
+.details-right-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.details-company-name {
+    margin-top: 10px;
+    font-family: "Kanit", sans-serif;
+    color: #362837;
+    opacity: 30%;
+    font-weight: 800;
+    font-size: 45;
+}
+
+.image-logo-zenofy {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-logo-zenofy img {
+    width: 150px;
+    height: 150px;
+}
+
+.button-row {
+    display: flex;
+    justify-content: end;
+    margin-top: 15px;
+    gap: 15px;
+}
+
+.button-row button {
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    padding: 7px;
+    padding-left: 30px;
+    padding-right: 30px;
+    color: white;
+    font-family: "Kanit", sans-serif;
+    transition: scale 0.5s;
+}
+
+.button-row button:hover {
+    cursor: pointer;
+    scale: 1.1;
+}
+
+.accept-button {
+    background-color: #478E28;
+}
+
+.decline-button {
+    background-color: #91181A;
+}
