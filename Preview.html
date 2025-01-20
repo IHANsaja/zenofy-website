@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Product Review Page</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="CSS/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.5.0/remixicon.css">
+  <link rel="stylesheet" href="CSS/Preview.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <header>
+    <div class="nav">
+        <div class="first-part">
+            <i class="ri-menu-4-line dropdown-trigger"></i>
+            <ul class="dropdown-menu">
+                    <li><a href="#">Projectors</a></li>
+                    <li><a href="#">HDMI Cables</a></li>
+                    <li><a href="#">Projector Screens</a></li>
+                    <li><a href="#">Other Accessories</a></li>
+            </ul>
+            <!-- Hamburger menu icon (for mobile only) -->
+            <i class="ri-menu-line menu-toggle"></i>
+            <img src="assets/logo.jpg" alt="zenofy-logo">
+            <h1>ZENOFY</h1>
+        </div>
+
+        <div class="mobile-mid-header">
+            <img src="assets/logo.jpg" alt="zenofy-logo" height="60px">
+            <h1>ZENOFY</h1>
+        </div>
+
+        <div class="nav-links">
+            <a href="#"><i class="ri-store-fill"></i><p>SHOP</p></a>
+            <a href="#"><i class="ri-home-9-fill"></i><p>HOME</p></a>
+            <a href="#" class="prof"><i class="ri-user-6-fill"></i><p>PROFILE</p></a>
+        </div>
+        <div class="cart">
+            <i class="ri-shopping-cart-fill"></i>
+        </div>
+      </div>
+        
+    <!-- Mobile menu -->
+      <div class="mobile-menu">
+          <div class="close-menu">
+              <i class="ri-close-line"></i>
+          </div>
+          <div class="mobile-nav-links">
+              <a href="#"><i class="ri-store-fill"></i><p>SHOP</p></a>
+              <a href="#"><i class="ri-home-9-fill"></i><p>HOME</p></a>
+              <a href="#"><i class="ri-user-6-fill"></i><p>PROFILE</p></a>
+          </div>
+      </div>
+  </header>
+
+  <div class="container">
+    <!-- Back Button -->
+    <div class="top-body">
+      <button class="nav-arrow-left" onclick=""><i class="fa fa-chevron-circle-left"></i></button>
+      <i class="fa fa-heart"></i>
+    </div>
+
+    <!-- Product Section -->
+    <div class="product">
+      <div class="product-image">
+        <img src="assets/Projector04.png" alt="Tripod Projector Screen">
+      </div>
+
+      <div class="product-options">
+        <div class="img"><img src="assets/Projector04.png" alt="Tripod Projector Screen"></div>
+        <div class="img"><img src="assets/Projector03.png" alt="Tripod Projector Screen"></div>
+        <div class="img"><img src="assets/Projector02.png" alt="Tripod Projector Screen"></div>
+        <div class="img"><img src="assets/Projector01.png" alt="Tripod Projector Screen"></div>
+      </div>
+
+      <div class="cart-section">
+        <!--Add to cart section-->
+        <form action="cart.html" method="post" class="Add-To-Cart">
+          <button type="submit" id="AddToCart">Add To Cart</button>
+          <div class="item-details">
+            <label for="price">Price</label>
+            <input type="text" id="price" value=" LKR 15000.00" disabled>
+          </div>
+
+          <div class="item-details">
+            <label for="Quantity">Quantity</label>
+            <div class="quantity-controls">
+              <button type="button" id="minus"><i class="fa fa-minus"></i></button>
+              <input type="number" value="1" id="quantity" readonly>
+              <button type="button" id="plus"><i class="fa fa-plus"></i></button>
+            </div>
+          </div>
+
+          <div class="item-details">
+            <label for="size">Size</label>
+            <select name="size" id="item-size">
+              <option value="5×5 feet">5×5 feet (60×60 in)</option>
+              <option value="6×6 feet">6×6 feet (70×70 in)</option>
+              <option value="7×7 feet">7×7 feet (80×80 in)</option>
+            </select>
+          </div>
+        </form>
+
+        <!--Place Quatation Section-->
+        <div class="quotation-section">
+          <p>If you want to make an outstanding order</p>
+          <button class="place-quotation">Place Quotation</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+    <!--Product Description section-->
+    <div class="product-discription">
+      <h1>Tripod Projector Screen <span class="rate"><i class="fa fa-star checked"></i>4.0</span></h1>
+      <p>A portable, easy-to-set-up screen perfect for presentations, home theater setups, and classrooms. Featuring a sturdy tripod base, it offers stability and flexibility, allowing you to adjust the height to your preference. The wrinkle-free surface ensures crisp, clear image quality, enhancing your viewing experience. Its lightweight design makes it convenient to transport and store, making it an ideal solution for on-the-go projection needs.</p>
+    </div>
+
+    <!-- Reviews Section -->
+    <div class="reviews-container">
+      <div class="reviews-header">
+          <h2>Reviews 
+            <span class="stars">
+              <i class="fa fa-star checked"></i>
+              <i class="fa fa-star checked"></i>
+              <i class="fa fa-star checked"></i>
+              <i class="fa fa-star checked"></i>
+              <i class="fa fa-star checked"></i>
+            </span>
+          </h2>
+          
+          <button class="see-all" href="reviews.html">see all</button>
+      </div>
+      <!--Reviews and images-->
+      <div class="reviews-content">
+          <div class="image-gallery">
+              <img src="assets/Previewimg1.jpeg" alt="Review Image 1">
+              <img src="assets/Previewimg2.jpeg" alt="Review Image 2">
+          </div>
+          <div class="review-text">
+              <p><strong>This Product is Amazing!</strong> I am very satisfied with it... Thank you Zenofy!</p>
+              <div class="review-stars">
+                <i class="fa fa-star checked"></i>
+                <i class="fa fa-star checked"></i>
+                <i class="fa fa-star checked"></i>
+                <i class="fa fa-star checked"></i>
+                <i class="fa fa-star unchecked"></i>
+                <span>4.0</span>
+              </div>
+          </div>
+      </div>
+
+      <!--Add Review section-->
+      <div class="add-review-button">
+          <span class="plus-icon">+</span> Review Product          
+      </div>
+    </div>
+
+
+
+  <footer>
+    <div class="row1">
+        <div class="sec1">
+            <div class="logoimg">
+                <img src="assets/logo.jpg" alt="zenofy-logo">
+                <h1>ZENOFY</h1>
+            </div>
+            <p>Zenofy offers high-quality projectors, projector screens, and accessories to enhance your home theater and presentation experiences.</p>
+            <div class="socials">
+                <a href="#" class="social-icon whatsapp">
+                    <i class="ri-whatsapp-fill"></i>
+                </a>
+                <a href="#" class="social-icon facebook">
+                    <i class="ri-facebook-circle-fill"></i>
+                </a>
+                <a href="#" class="social-icon messenger">
+                    <i class="ri-messenger-fill"></i>
+                </a>
+                <a href="#" class="social-icon twitter">
+                    <i class="ri-twitter-x-fill"></i>
+                </a>
+            </div>                
+        </div>
+        <div class="sec2">
+            <h2>SERVICES</h2>
+            <div class="links">
+                <a href="#"><p>Projectors</p></a>
+                <a href="#"><p>Smart Screens</p></a>
+                <a href="#"><p>Projector Accessories</p></a>
+                <a href="#"><p>HDMI & Accessories</p></a>
+            </div>
+        </div>
+        <div class="sec3">
+            <h2>FIND US</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.721588116579!2d80.213391375935!3d6.0328945939526575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae173bb5148e45f%3A0x96162d4d5240a33b!2sGalle%20Central%20Bus%20Stand%2C%20Gamini%20Mawatha%2C%20Galle%2080000!5e0!3m2!1sen!2slk!4v1732958020992!5m2!1sen!2slk" width="200" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+    <div class="row2">
+        <hr>
+        <p>© 2024 Zenofy. All rights reserved.</p>
+    </div>
+</footer>    
+
+
+    <script src="JS/Preview.js"></script>>
+
+
+</body>
+</html>

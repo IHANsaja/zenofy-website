@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="CSS/Dashboard.css">
+    <link rel="stylesheet" href="CSS/UserArea.css">
+    <link rel="stylesheet" href="CSS/AdminProduct.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.5.0/remixicon.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <div class="hp1">
+            <img src="assets/logo.jpg" alt="logo" height="40px" width="40px">
+            <h2>ZENOFY</h2>
+        </div>
+        <div class="hp2">
+            <p>Welcome admin123!</p>
+            <div class="usericon-container">
+                <i class="ri-user-6-fill"></i>
+            </div>
+        </div>
+    </header>
+    <div class="dashboard">
+        <!--Sidebar Starts here-->
+        <div class="sidebar">
+            <ul>
+                <li class="tab active" onclick="showContent('analytics')"><i class="ri-dashboard-horizontal-fill"></i><p>Analytics</p></li>
+                <li class="tab" onclick="showContent('quotations')"><i class="ri-file-list-2-fill"></i><p>Quotations</p></li>
+                <li class="tab" onclick="showContent('products')"><i class="ri-box-1-fill"></i><p>Products</p></li>
+                <li class="tab" onclick="showContent('userArea')"><i class="ri-file-user-fill"></i><p>User Area</p></li>
+            </ul>
+            <button class="logout-btn">
+                <i class="ri-logout-box-r-line"></i>
+                Log Out
+            </button>
+        </div>
+        <!--Sidebar Ends here-->
+        <div class="main-content">
+            <!-- Analytics Content -->
+            <div class="tab-content" id="analytics">
+                <h2>Analytics</h2>
+                <div class="stats">
+                    <div class="stat-item">
+                        <i class="ri-archive-stack-fill"></i>
+                        <div class="stat-text">
+                            <h3>Total Products sold</h3>
+                            <p>290</p>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <i class="ri-team-fill"></i>
+                        <div class="stat-text">
+                            <h3>New clients</h3>
+                            <p>410</p>
+                        </div>
+                    </div>
+                    <div class="stat-item-reverse">
+                        <i class="ri-money-dollar-circle-fill"></i>
+                        <div class="stat-text"> 
+                            <h3>This month earnings</h3>
+                            <p>$578.25</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="charts">
+                    <div class="chart-container">
+                        <h3>Daily Income</h3>
+                        <canvas id="incomeChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Sales Analysis</h3>
+                        <canvas id="salesChart"></canvas>
+                    </div>
+                </div>
+                <div class="details">
+                    <div class="recent-orders">
+                        <h3>Recent Orders</h3>
+                        <table class="status-table">
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Product Name</th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#000001</td>
+                                    <td>Electric Screen</td>
+                                    <td>2</td>
+                                    <td>$300</td>
+                                    <td class="status">Pending</td>
+                                </tr>
+                                <tr>
+                                    <td>#000002</td>
+                                    <td>Manual Screen</td>
+                                    <td>1</td>
+                                    <td>$300</td>
+                                    <td class="status">Pending</td>
+                                </tr>
+                                <tr>
+                                    <td>#000003</td>
+                                    <td>Projector Stand</td>
+                                    <td>10</td>
+                                    <td>$300</td>
+                                    <td class="status">Completed</td>
+                                </tr>
+                            </tbody>
+                        </table>                        
+                    </div>
+                    <div class="best-item">
+                        <img src="assets/logo.jpg" alt="Best Selling Product" class="product-image">
+                        <h3 class="product-name">Product Name</h3>
+                        <p>Best selling item displays here</p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Quotations Content -->
+            <div class="tab-content" id="quotations" style="display: none;">
+                <h2>Quotations</h2>
+                <p>Manage and create quotations for your clients here.</p>
+            </div>
+    
+            <!-- Products Content -->
+            <div class="tab-content" id="products" style="display: none;">
+                <div class="products-top">
+                    <button class="add-product">Add New Product</button>
+                </div>
+                <div class="products-line">
+                    <div class="card">
+                        <img src="assets/Projector01.png" alt="Manual Wall Mount Projector Screen">
+                        <h3>Manual Wall Mount Projector Screen</h3>
+                        <p>Stock: 10</p>
+                        <p>Price: $50</p>
+                        <div class="button-container">
+                            <button class="button delete">Delete</button>
+                            <button class="button edit">Edit</button>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img src="assets/Projector05.jpeg" alt="Tripod Projector Screen">
+                        <h3>Tripod Projector Screen</h3>
+                        <p>Stock: 12</p>
+                        <p>Price: $40</p>
+                        <div class="button-container">
+                            <button class="button delete">Delete</button>
+                            <button class="button edit">Edit</button>
+                        </div>
+                    </div>
+    
+                    <div class="card">
+                        <img src="assets/ProjectorStand.jpeg" alt="Electric Wall Mount Projector Stand">
+                        <h3>Electric Wall Mount Projector Stand</h3>
+                        <p>Stock: 15</p>
+                        <p>Price: $40</p>
+                        <div class="button-container">
+                            <button class="button delete">Delete</button>
+                            <button class="button edit">Edit</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="products-line">
+                    <div class="card">
+                        <img src="assets/ProjectorStand2.jpeg" alt="Projector Stand">
+                        <h3>Projector Stand</h3>
+                        <p>Stock: 07</p>
+                        <p>Price: $100</p>
+                        <div class="button-container">
+                            <button class="button delete">Delete</button>
+                            <button class="button edit">Edit</button>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img src="assets/WhiteboardStand.jpg" alt="Smart White Board Stand">
+                        <h3>Smart White Board Stand</h3>
+                        <p>Stock: 12</p>
+                        <p>Price: $75</p>
+                        <div class="button-container">
+                            <button class="button delete">Delete</button>
+                            <button class="button edit">Edit</button>
+                        </div>
+                    </div>
+    
+                    <div class="card">
+                        <img src="assets/Brackets.jpeg" alt="Projector Brackets">
+                        <h3>Projector Brackets</h3>
+                        <p>Stock: 10</p>
+                        <p>Price: $150</p>
+                        <div class="button-container">
+                            <button class="button delete">Delete</button>
+                            <button class="button edit">Edit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- User Area Content -->
+            <div class="tab-content" id="userArea">
+                <div class="tabs">
+                    <button id="home-tab" class="tab-btn active">Home</button>
+                    <button id="shop-tab" class="tab-btn">Shop</button>
+                  </div>
+            <div class="container">
+                  <section id="home-section" class="tab-con active">
+                    <form id="home-form">
+                      <label for="home-title">Title:</label>
+                      <input type="text" id="home-title" value="WELCOME">
+            
+                      <label for="home-description">Description:</label>
+                      <textarea id="home-description" rows="5" placeholder="Enter the home description here..."></textarea>
+            
+                      <button type="submit">Save</button>
+                    </form>
+                  </section>
+            
+                  <section id="shop-section" class="tab-con">
+                    <form id="shop-form">
+                        <div class="details">
+                            <label for="shop-caption">Caption & Images:</label>
+                            <table id="tb">
+                                <tr>
+                                    <td><img src="" alt="Shop1"></td>
+                                    <td><input type="text" id="shop-caption" placeholder="Top Affordable Product Prices in Sri Lanka for Every Budget"></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="" alt="Shop2"></td>
+                                    <td><input type="text" id="shop-caption" placeholder="Top Affordable Product Prices in Sri Lanka for Every Budget"></td>
+                                </tr>
+                                <tr>
+                                        <td><label for="shop-image">Upload Your Image:</label>
+                                            <input type="file" id="shop-image"></td>
+                                        <td><input type="text" id="shop-image-caption" placeholder="Enter caption here..."></td>
+                                    </tr>
+                                </table>
+                                <button type="submit">Save</button>
+                            </div>
+                    </form>
+                  </section>
+                </div>
+                </div>
+            </div>
+        </div>
+        </div>            
+        </div>
+    </div>
+    <script src="JS/UserArea.js"></script>
+    <script src="JS/Dashboard.js"></script>
+</body>
+</html>
