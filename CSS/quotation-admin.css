@@ -162,7 +162,7 @@
     gap: 15px;
 }
 
-.button-row button {
+.button-row button, input {
     text-decoration: none;
     border-radius: 5px;
     border: none;
@@ -179,11 +179,42 @@
     scale: 1.1;
 }
 
-.accept-button {
+.button-row input:hover {
+    cursor: pointer;
+    scale: 1.1;
+}
+
+.accept-button, #submit-button {
     background-color: #478E28;
 }
 
-.decline-button {
+.decline-button, #clear-button {
     background-color: #91181A;
+}
+
+.accept-form {
+    background-color: #DED6DE;
+    margin-top: 15px;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: repeat(1, 2fr);
+    padding: 10px;
+    row-gap: 20px;
+}
+
+#upload-button {
+    position: absolute;
+    justify-self: end;
+    align-self: flex-end;
+    width: 40px;
+}
+
+.accept-form textarea {
+    height: 100px;
+    resize: none;
+    border: rgb(78, 57, 79, 0.5) solid;
+    border-radius: 5px;
+    border-width: 1px;
 }
 

@@ -89,6 +89,7 @@
             </div>
         </div>
         <div class="accept-container">
+            <button class="nav-arrow-left" onclick=""><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></button>
             <div class="top-ribbon">
                 <div class="quotation-name">Quotation Name 1</div>
             </div>
@@ -96,8 +97,13 @@
                 <label>Message</label>
                 <textarea name="message-quotation" id="message-quotation"></textarea>
                 <label>Upload PDF</label>
-                <canvas></canvas>
+                <textarea name="upload-pdf" id="upload-pdf"></textarea>
+                <img id="upload-button" src="assets/upload-icon.png" alt="">
             </form>
+            <div class="button-row">
+                <input id="clear-button" type="reset" value="Clear">
+                <input id="submit-button" type="submit" value="Submit">
+            </div>
         </div>
     </body>
 </html>
