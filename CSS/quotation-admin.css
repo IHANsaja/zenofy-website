@@ -210,6 +210,10 @@
     width: 40px;
 }
 
+#upload-button:hover {
+    cursor: pointer;
+}
+
 .accept-form textarea {
     height: 100px;
     resize: none;
