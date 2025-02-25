@@ -33,6 +33,14 @@
                         <td><input type="email" name="CusEmail" id="CusEmail" required></td>
                     </tr>
                     <tr>
+                        <td>Item</td>
+                        <td><input type="number" value="1200001" name="itemcode" id="itemcode" readonly></td>
+                    </tr>
+                    <tr>
+                        <td>Quantity</td>
+                        <td><input type="number" name="quantity" id="quantity" required></td>
+                    </tr>
+                    <tr>
                         <td>Company Email</td>
                         <td><input type="email" name="ComEmail" id="ComEmail" required></td>
                     </tr>
@@ -46,7 +54,7 @@
                     </tr>
                 </table>
                 <div class="quoSubBtn">
-                    <input type="submit" value="Submit"  id="quoSubmitBtn">
+                    <input onclick="window.location.href='Qcart.html'" type="submit" value="Submit"  id="quoSubmitBtn" style="cursor: pointer;">
                 </div>
             </form>
         </main>

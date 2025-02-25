@@ -34,12 +34,12 @@
         </div>
 
         <div class="nav-links">
-            <a href="#"><i class="ri-store-fill"></i><p>SHOP</p></a>
-            <a href="#"><i class="ri-home-9-fill"></i><p>HOME</p></a>
-            <a href="#" class="prof"><i class="ri-user-6-fill"></i><p>PROFILE</p></a>
+            <a href="shop.html"><i class="ri-store-fill"></i><p>SHOP</p></a>
+            <a href="Index.html"><i class="ri-home-9-fill"></i><p>HOME</p></a>
+            <a href="Profile.html" class="prof"><i class="ri-user-6-fill"></i><p>PROFILE</p></a>
         </div>
         <div class="cart">
-            <i class="ri-shopping-cart-fill"></i>
+            <i onclick="window.location.href='Ncart.html'" class="ri-shopping-cart-fill"></i>
         </div>
       </div>
         
@@ -49,9 +49,9 @@
               <i class="ri-close-line"></i>
           </div>
           <div class="mobile-nav-links">
-              <a href="#"><i class="ri-store-fill"></i><p>SHOP</p></a>
-              <a href="#"><i class="ri-home-9-fill"></i><p>HOME</p></a>
-              <a href="#"><i class="ri-user-6-fill"></i><p>PROFILE</p></a>
+              <a href="shop.html"><i class="ri-store-fill"></i><p>SHOP</p></a>
+              <a href="Index.html"><i class="ri-home-9-fill"></i><p>HOME</p></a>
+              <a href="Profile.html"><i class="ri-user-6-fill"></i><p>PROFILE</p></a>
           </div>
       </div>
   </header>
@@ -59,7 +59,7 @@
   <div class="container">
     <!-- Back Button -->
     <div class="top-body">
-      <button class="nav-arrow-left" onclick=""><i class="fa fa-chevron-circle-left"></i></button>
+      <button class="nav-arrow-left" onclick="history.back()"><i class="fa fa-chevron-circle-left"></i></button>
       <i class="fa fa-heart"></i>
     </div>
 
@@ -107,7 +107,7 @@
         <!--Place Quatation Section-->
         <div class="quotation-section">
           <p>If you want to make an outstanding order</p>
-          <button class="place-quotation">Place Quotation</button>
+          <button onclick="window.location.href='QuotationSubmit.html'" class="place-quotation">Place Quotation</button>
         </div>
         
       </div>
@@ -133,7 +133,7 @@
             </span>
           </h2>
           
-          <button class="see-all" href="reviews.html">see all</button>
+          <button class="see-all" onclick="window.location.href='review.html'">see all</button>
       </div>
       <!--Reviews and images-->
       <div class="reviews-content">
