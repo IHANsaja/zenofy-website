@@ -118,3 +118,5 @@ function updateContent() {
 
 topic.addEventListener('input', updateContent);
 description.addEventListener('input', updateContent);
+
+
