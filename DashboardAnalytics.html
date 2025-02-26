@@ -4,11 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');     
+    </style>
     <link rel="stylesheet" href="CSS/Dashboard.css">
     <link rel="stylesheet" href="CSS/UserArea.css">
     <link rel="stylesheet" href="CSS/AdminProduct.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.5.0/remixicon.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="CSS/quotation-admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.5.0/remixicon.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="JS/quotations-admin.js" defer></script>
 </head>
 <body>
     <header>
@@ -124,7 +132,27 @@
             <!-- Quotations Content -->
             <div class="tab-content" id="quotations" style="display: none;">
                 <h2>Quotations</h2>
-                <p>Manage and create quotations for your clients here.</p>
+                <div class="home-quotations">
+                    <div class="top-container">
+                        <div class="quotation-topic"><p></p>Quotation List</p></div>
+                        <div class="total-quotations"><p>Total Quotations:&nbsp;</p><span name="tot-quotations">5</span></div>
+                    </div>
+                    <div class="quotations-list">
+                        <div class="quotation">
+                            <div class="left-quotation">
+                                <h2>Quotation Name 1</h2>
+                                <p>Quotation ID: <span name="quotation-id"></span></p>
+                            </div>
+                            <div class="middle-quotation">
+                                <p>ORDERED: <span name="quotation-date"></span></p>
+                            </div>
+                            <button id="quotation-details">Details</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="details-quotations">
+                    <button class="nav-arrow-left" onclick=""><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></button>
+                </div>
             </div>
     
             <!-- Products Content -->
