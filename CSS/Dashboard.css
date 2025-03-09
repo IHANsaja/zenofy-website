@@ -29,6 +29,8 @@ body {
 .main-content {
     flex: 1;
     padding: 20px;
+    margin-top: 50px;
+    margin-left: 200px;
 }
 
 header {
@@ -41,6 +43,11 @@ header {
     background-color: var(--background);
     color: var(--text);
     height: 60px;
+    position: fixed; /* Fixes the header on top */
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* Ensures header is in front of the sidebar */
+    padding: 0 20px;
 }
 
 header .hp1,
@@ -307,11 +314,13 @@ th, td {
 
 .sidebar {
     width: 200px;
-    height: 100%;
+    height: calc(100% - 60px);
+    Top: 60px;
     background-color: #362837;
     color: var(--background);
     display: flex;
     flex-direction: column;
+    position: fixed;
     justify-content: space-between;
     padding-bottom: 20px;
 }
