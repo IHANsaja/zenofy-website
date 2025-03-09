@@ -1,6 +1,6 @@
 .top-container {
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .quotation-topic {
@@ -35,6 +35,7 @@
 .quotation {
     padding: 10px;
     border-radius: 5px;
+    margin-bottom: 20px;
     background-color: #DED6DE;
     display: flex;
     justify-content: space-between;
@@ -72,7 +73,7 @@
     font-size: large;
     font-weight: 600;
     display: flex;
-    transition: transform 1s;
+    transition: transform 0.4s;
 }
 
 .quotation button:hover {
