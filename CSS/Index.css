@@ -2,8 +2,8 @@
     background-color:#B1A6B1;
     display: flex;
     flex-direction: column;
-    z-index: 0;
-    background-image: url("Assets/Home1.png");
+    z-index: 1000;
+    background-image: url('/assets/Home1.png');
     height: 75vh;
     background-repeat: no-repeat;
     background-position-x: right;
@@ -93,18 +93,27 @@
     margin-top: 35px;
 }
 .items{
+    position: relative;
     width: 50%;
-    background-color:yellow ;
     display: flex;
     flex-direction: row;
-    padding: 10px;
     height: 20vh;
     margin: 20px;
+    background: #0E040E;
 }
+
+.items img.back-left{
+    position: absolute;
+    width: 100%;  
+    height: 100%;
+    object-fit: cover;
+}
+
 .collection{
     display: flex;
     flex-direction: column;
     width: 50%;
+    padding: 10px;
 }
 .collection button{
     border-radius:20px  ;
@@ -124,19 +133,31 @@
     padding: 20px;
 }
 .items2{
+    position: relative;
     width: 50%;
-    background-color:green ;
+    background: #0E040E;
     display: flex;
     flex-direction: row;
-    padding: 10px;
     height: 20vh;
     margin: 20px;
 }
+.items2 img.back-right{
+    position: absolute;
+    width: 100%;  
+    height: 100%;
+    object-fit: cover;
+}
+
+.items2 img.proj-stand{
+    height: 120%;
+    transform: translate(30%, -10%);
+}
+
 .collection2{
     display: flex;
     flex-direction: column;
     width: 50%;
-    padding: 0;
+    padding: 10px;
 }
 .collection2 button{
     border-radius:20px  ;
@@ -304,26 +325,40 @@
     margin-bottom: 15px;
 }
 .cat{
-    margin-left: 30px;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
 }
 .categories{
     border: none;
     background-color: #DED6DE;
     border-radius:8px ;
     border: none;
-    padding-top: 80px;
-    padding-bottom: 80px;
-    padding-left: 45px;
-    padding-right: 45px;
-    margin-left: 15px;
-    margin-right: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:column;
+    padding: 45px;
+    margin: 20px;
 }
-.categories img{
-    width: 180px;
-    height: 180px;
+.categories i {
+    font-size: 150px; 
+    display: block; 
+    text-align: center;
+    color: #362837;
 }
+.categories img {
+     
+    display: block; 
+    text-align: center;
+}
+.categories p{
+    font-family: 'Roboto';
+    font-weight: bold;
+    color: #362837;
+    font-size: 25px;
+}
+
 .services{
     margin-top: 40px;
     margin-bottom: 40px;

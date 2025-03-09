@@ -32,12 +32,12 @@
             </div>
 
             <div class="nav-links">
-                <a href="#"><i class="ri-store-fill"></i><p>SHOP</p></a>
+                <a href="shop.html"><i class="ri-store-fill"></i><p>SHOP</p></a>
                 <a href="Index.html"><i class="ri-home-9-fill"></i><p>HOME</p></a>
                 <a href="Profile.html" class="prof"><i class="ri-user-6-fill"></i><p>PROFILE</p></a>
             </div>
             <div class="cart">
-                <i class="ri-shopping-cart-fill"></i>
+                <i onclick="window.location.href='Ncart.html'" class="ri-shopping-cart-fill"></i>
             </div>
         </div>
             
@@ -47,7 +47,7 @@
                 <i class="ri-close-line"></i>
             </div>
             <div class="mobile-nav-links">
-                <a href="#"><i class="ri-store-fill"></i><p>SHOP</p></a>
+                <a href="shop.html"><i class="ri-store-fill"></i><p>SHOP</p></a>
                 <a href="Index.html"><i class="ri-home-9-fill"></i><p>HOME</p></a>
                 <a href="Profile.html"><i class="ri-user-6-fill"></i><p>PROFILE</p></a>
             </div>
@@ -71,7 +71,7 @@
                     are designed to deliver exceptional image clarity, brightness, and durability, ensuring an 
                     immersive and reliable experience for all your projection needs.
                 </h4>
-                <button>SHOP NOW</button>
+                <button onclick="window.location.href='shop.html'" style="cursor: pointer;">SHOP NOW</button>
             </div>
         </div>
     </div>
@@ -79,21 +79,22 @@
         <div class="items">
             <div class="collection">
                 <h4>VEGA SMART SCREENS COLLECTION</h4>
-                <button>BUY NOW</button>
+                <button onclick="window.location.href='shop.html'" style="cursor: pointer; z-index: 100;">BUY NOW</button>
             </div>
-            <img src="" alt="">
+            <img src="/assets/home-Left.png" alt="back-left">
+            <img class="back-left" src="/assets/home-left-wall.png" alt="">
         </div>
         <div class="items2">
             <div class="collection2">
                 <h4>PROJECTOR LIFTS AND STANDS</h4>
-                <button>BUY NOW</button>
+                <button onclick="window.location.href='shop.html'" style="cursor: pointer; z-index: 100;">BUY NOW</button>
             </div>
-            <img src="" alt="projectors">
+            <img class="proj-stand" src="/assets/home-right.png" alt="projectors">
+            <img class="back-right" src="/assets/home-right-wall.png" alt="back-right">
         </div>
     </div>
     <div class="products">
         <h2>Most Popular Products</h2>
-        <a href=""><i class="ri-scroll-to-bottom-fill"></i></a>
     </div>
     <div class="cards">
         <div class="pro1">
@@ -119,8 +120,8 @@
                     <p>5.0</p>
                 </div>
                 <div class="buypro">
-                    <button>BUY</button>
-                    <i class="ri-shopping-cart-fill"></i>
+                    <button onclick="window.location.href='Preview.html'" style="cursor: pointer;">BUY</button>
+                    <i onclick="window.location.href='Ncart.html'" style="cursor: pointer;" class="ri-shopping-cart-fill"></i>
                 </div>
             </div>
         </div>
@@ -147,8 +148,8 @@
                     <p>5.0</p>
                 </div>
                 <div class="buypro">
-                    <button>BUY</button>
-                    <i class="ri-shopping-cart-fill"></i>
+                    <button onclick="window.location.href='Preview.html'" style="cursor: pointer;">BUY</button>
+                    <i onclick="window.location.href='Ncart.html'" style="cursor: pointer;" class="ri-shopping-cart-fill"></i>
                 </div>
             </div>
         </div>
@@ -175,8 +176,8 @@
                     <p>5.0</p>
                 </div>
                 <div class="buypro">
-                    <button>BUY</button>
-                    <i class="ri-shopping-cart-fill"></i>
+                    <button onclick="window.location.href='Preview.html'" style="cursor: pointer;">BUY</button>
+                    <i onclick="window.location.href='Ncart.html'" style="cursor: pointer;" class="ri-shopping-cart-fill"></i>
                 </div>
             </div>
         </div>
@@ -203,8 +204,8 @@
                     <p>5.0</p>
                 </div>
                 <div class="buypro">
-                    <button>BUY</button>
-                    <i class="ri-shopping-cart-fill"></i>
+                    <button onclick="window.location.href='Preview.html'" style="cursor: pointer;">BUY</button>
+                    <i onclick="window.location.href='Ncart.html'" style="cursor: pointer;" class="ri-shopping-cart-fill"></i>
                 </div>
             </div>
         </div>
@@ -231,8 +232,8 @@
                     <p>5.0</p>
                 </div>
                 <div class="buypro">
-                    <button>BUY</button>
-                    <i class="ri-shopping-cart-fill"></i>
+                    <button onclick="window.location.href='Preview.html'" style="cursor: pointer;">BUY</button>
+                    <i onclick="window.location.href='Ncart.html'" style="cursor: pointer;" class="ri-shopping-cart-fill"></i>
                 </div>
             </div>
         </div>
@@ -241,21 +242,26 @@
         <h2>Categories</h2>
     </div>
     <div class="cat">
-        <button class="categories">
-            <img src="assets/cat1.png" alt="Electric Screen">
-        </button>
-        <button class="categories">
-            <img src="assets/cat2.png" alt="Electric Screen">
-        </button>
-        <button class="categories">
-            <img src="assets/cat3.png" alt="Electric Screen">
-        </button>
-        <button class="categories">
-            <img src="assets/cat4.png" alt="Electric Screen">
-        </button>
-        <button class="categories">
-            <img src="assets/cat5.png" alt="Electric Screen">
-        </button> 
+        <div class="categories">
+            <i class="ri-slideshow-fill"></i>
+            <p>Electric Screen</p>
+        </div>
+        <div class="categories">
+            <img src="assets/2.svg" alt="">
+            <p>Manual Screen</p>
+        </div>
+        <div class="categories">
+            <img src="assets/3.svg" alt="">
+            <p>Tripod Screen</p>
+        </div>
+        <div class="categories">
+            <img src="assets/4.svg" alt="">
+            <p>Projector Stand</p>
+        </div>
+        <div class="categories">
+            <img src="assets/5.svg" alt="">
+            <p>Projector Lift</p>
+        </div>
     </div>
     <div class="services">
         <div class="service1">
