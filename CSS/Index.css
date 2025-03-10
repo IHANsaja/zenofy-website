@@ -390,3 +390,147 @@
     font-weight: bold;
     padding: 10px;
 }
+@media (max-width: 1024px) {
+    .wel {
+        height: auto;
+        background-size: contain;
+    }
+
+    .wel1 {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .topic {
+        width: 90%;
+        margin-top: 20px;
+        padding: 10px;
+    }
+
+    .topic h1 {
+        font-size: 48px;
+    }
+
+    .topic h4 {
+        font-size: 16px;
+        line-height: 18px;
+    }
+
+    .topic button {
+        width: 50%;
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    .items, .items2 {
+        width: 90%;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .collection, .collection2 {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .search {
+        position: relative;
+        right: 0;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .search input {
+        width: 80%;
+        height: 30px;
+    }
+
+    .search-con {
+        margin-top: 10px;
+    }
+
+    .products {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .pro1 {
+        width: 90%;
+        margin: 10px 0;
+    }
+
+    .cat {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .categories {
+        width: 80%;
+        padding: 20px;
+    }
+
+    .services {
+        flex-direction: column;
+    }
+
+    .service1 {
+        width: 80%;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .topic h1 {
+        font-size: 36px;
+    }
+
+    .topic h4 {
+        font-size: 14px;
+    }
+
+    .topic button {
+        width: 80%;
+        font-size: 14px;
+        padding: 6px;
+    }
+
+    .collection h4, .collection2 h4 {
+        font-size: 16px;
+    }
+
+    .buypro button {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+
+    .popular {
+        margin-left: 0;
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .rate img {
+        width: 16px;
+    }
+
+    .rate p {
+        font-size: 12px;
+    }
+
+    .categories p {
+        font-size: 20px;
+    }
+
+    .service1 h6 {
+        font-size: 20px;
+    }
+
+    .service1 p {
+        font-size: 12px;
+    }
+}
