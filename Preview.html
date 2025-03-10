@@ -78,8 +78,8 @@
 
       <div class="cart-section">
         <!--Add to cart section-->
-        <form action="cart.html" method="post" class="Add-To-Cart">
-          <button type="submit" id="AddToCart">Add To Cart</button>
+        <form action="Ncart.html" method="post" class="Add-To-Cart">
+          <button type="submit" onclick="window.location.href='Ncart.html'" id="AddToCart">Add To Cart</button>
           <div class="item-details">
             <label for="price">Price</label>
             <input type="text" id="price" value=" LKR 15000.00" disabled>
@@ -203,11 +203,27 @@
         <hr>
         <p>© 2024 Zenofy. All rights reserved.</p>
     </div>
-</footer>    
-
-
-    <script src="JS/Preview.js"></script>>
-
-
+</footer>
+<script src="JS/Preview.js"></script>
+<script>
+      (function(){
+          if(!window.chatbase||window.chatbase("getState")!=="initialized"){
+              window.chatbase=(...arguments)=>{
+                  if(!window.chatbase.q){
+                      window.chatbase.q=[]}window.chatbase.q.push(arguments)};
+                      window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){
+                          return target.q}return(...args)=>target(prop,...args)
+                      }})}
+                      const onLoad=function(){
+                          const script=document.createElement("script");
+                          script.src="https://www.chatbase.co/embed.min.js";
+                          script.id="k2hDJEVUs9aCCukdhH3Bi";
+                          script.domain="www.chatbase.co";
+                          document.body.appendChild(script)};
+                          if(document.readyState==="complete"){
+                              onLoad()}
+                          else{
+                              window.addEventListener("load",onLoad)}})();
+</script>
 </body>
 </html>
