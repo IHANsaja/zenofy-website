@@ -1,0 +1,83 @@
+.quotation-modal {
+    background: #fff;
+    width: 90%;
+    max-width: 900px;
+    border-radius: 12px;
+    padding: 40px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modal-title-main {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.product-preview {
+    background-color: #e5e0e5;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-preview img {
+    max-width: 100%;
+    max-height: 350px;
+    object-fit: contain;
+}
+
+.quotation-form-mini {
+    background-color: #e5e0e5;
+    border-radius: 12px;
+    padding: 30px;
+    flex: 1;
+}
+
+.quotation-form-mini h3 {
+    font-size: 24px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.form-group-compact {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.form-group-compact label {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.form-group-compact input,
+.form-group-compact textarea {
+    background-color: #fff;
+    border: 1px solid #777;
+    border-radius: 8px;
+    padding: 10px 15px;
+    outline: none;
+    font-size: 16px;
+}
+
+.btn-add-quotation {
+    background-color: #2D5A27;
+    /* Darker green from image */
+    color: #fff;
+    padding: 10px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    float: right;
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .modal-body {
+        flex-direction: column;
+    }
+}

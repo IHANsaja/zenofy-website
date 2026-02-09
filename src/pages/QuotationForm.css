@@ -1,0 +1,97 @@
+.quotation-form-page {
+    padding: 60px 40px;
+    background-color: #fff;
+    min-height: calc(100vh - 70px);
+}
+
+.form-page-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.back-btn-circle-alt {
+    position: absolute;
+    left: -60px;
+    top: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.main-form-card {
+    background-color: #e5e0e5;
+    padding: 50px 80px;
+    border-radius: 12px;
+}
+
+.main-form-card h1 {
+    font-size: 28px;
+    margin-bottom: 40px;
+    color: #444;
+}
+
+.quotation-submit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-group-wide {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    align-items: center;
+    gap: 20px;
+}
+
+.form-group-wide label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group-wide input,
+.form-group-wide textarea {
+    border: 1px solid #777;
+    border-radius: 5px;
+    padding: 10px 15px;
+    outline: none;
+    font-size: 16px;
+    background-color: #fff;
+}
+
+.form-submit-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.btn-quotation-submit {
+    background-color: #2D5A27;
+    color: #fff;
+    padding: 10px 60px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+@media (max-width: 800px) {
+    .main-form-card {
+        padding: 30px;
+    }
+
+    .form-group-wide {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .back-btn-circle-alt {
+        left: 0;
+        top: -50px;
+    }
+}
