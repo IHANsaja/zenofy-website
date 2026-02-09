@@ -74,6 +74,10 @@ const Reviews: React.FC = () => {
         return (sum / reviews.length).toFixed(1);
     }, [reviews]);
 
+    const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
+        e.currentTarget.src = 'https://images.unsplash.com/photo-1594322436404-5a0526db4d13?auto=format&fit=crop&q=80&w=400';
+    };
+
     return (
         <div className="reviews-page">
             <div className="reviews-container">
@@ -121,7 +125,7 @@ const Reviews: React.FC = () => {
                                         {review.images && (
                                             <div className="review-images">
                                                 {review.images.map((img: string, i: number) => (
-                                                    <div key={i} className="review-img-thumb"><img src={img} alt="" /></div>
+                                                    <div key={i} className="review-img-thumb"><img src={img} alt="" onError={handleImageError} /></div>
                                                 ))}
                                             </div>
                                         )}
@@ -159,6 +163,7 @@ const Reviews: React.FC = () => {
                 isOpen={showAddModal}
                 onClose={() => setShowAddModal(false)}
                 onAddReview={handleAddReview}
+                productId={null}
             />
         </div>
     );

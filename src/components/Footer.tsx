@@ -1,4 +1,4 @@
-import React from 'react';
+import logo from '../assets/logo.png';
 import './Footer.css';
 
 const Footer: React.FC = () => {
@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
             <div className="footer-container">
                 <div className="footer-section brand-info">
                     <div className="logo-group">
-                        <img src="/assets/logo.png" alt="zenofy-logo" className="footer-logo" />
+                        <img src={logo} alt="zenofy-logo" className="footer-logo" />
                         <h1 className="footer-brand">ZENOFY</h1>
                     </div>
                     <p className="footer-desc">
@@ -24,10 +24,10 @@ const Footer: React.FC = () => {
                 <div className="footer-section services-links">
                     <h2 className="section-title">SERVICES</h2>
                     <ul className="links-list">
-                        <li><a href="#">Projectors</a></li>
-                        <li><a href="#">Smart Screens</a></li>
-                        <li><a href="#">Projector Accessories</a></li>
-                        <li><a href="#">HDMI & Accessories</a></li>
+                        <li><i className="ri-projector-line"></i> <a href="#">Projectors</a></li>
+                        <li><i className="ri-tv-2-line"></i> <a href="#">Smart Screens</a></li>
+                        <li><i className="ri-settings-4-line"></i> <a href="#">Projector Accessories</a></li>
+                        <li><i className="ri-plug-line"></i> <a href="#">HDMI & Accessories</a></li>
                     </ul>
                 </div>
 

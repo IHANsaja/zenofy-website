@@ -1,18 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import ProductDetailModal from '../components/ProductDetailModal';
 import './Shop.css';
 
 const Shop: React.FC = () => {
-    const navigate = useNavigate();
+    const location = useLocation();
     const [currentSlide, setCurrentSlide] = useState(0);
+    const [products, setProducts] = useState<any[]>([]);
+    const [categories, setCategories] = useState<any[]>([]);
+    const [selectedCategory, setSelectedCategory] = useState<string>('All');
+    const [selectedProduct, setSelectedProduct] = useState<any>(null);
+    const [isDetailModalOpen, setIsDetailModalOpen] = useState(false);
+
     const slides = [
         { img: 'https://images.unsplash.com/photo-1517604401157-53c755bef0ee?auto=format&fit=crop&q=80&w=1400', text: 'Premium Cinema Experience at Your Fingertips' },
         { img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1400', text: 'Crystal Clear Resolution, Day or Night' },
         { img: 'https://images.unsplash.com/photo-1593359677879-14ff9d56508d?auto=format&fit=crop&q=80&w=1400', text: 'Immersive Home Theater Solutions' },
     ];
-
-    const [products, setProducts] = useState<any[]>([]);
-    const [categories, setCategories] = useState<any[]>([]);
 
     useEffect(() => {
         // Load Categories
@@ -20,7 +24,12 @@ const Shop: React.FC = () => {
         const defaultCategories = [
             { id: 'cat1', name: 'Ambient Light Rejecting Screens', description: 'Crystal clear projection even in daylight' },
             { id: 'cat2', name: '4K High Definition Projectors', description: 'Experience every detail with stunning 4K' },
-            { id: 'cat3', name: 'Professional Installation Kits', description: 'Everything you need for a perfect setup' }
+            { id: 'cat3', name: 'Professional Installation Kits', description: 'Everything you need for a perfect setup' },
+            { id: 'cat4', name: 'Electric Screen' },
+            { id: 'cat5', name: 'Manual Screen' },
+            { id: 'cat6', name: 'Tripod Screen' },
+            { id: 'cat7', name: 'Projector Stand' },
+            { id: 'cat8', name: 'Projector Lift' }
         ];
         const cats = savedCategories ? JSON.parse(savedCategories) : defaultCategories;
         setCategories(cats);
@@ -36,18 +45,34 @@ const Shop: React.FC = () => {
         ];
         const prods = savedProducts ? JSON.parse(savedProducts) : initialProducts;
         setProducts(prods);
-    }, []);
 
-    const handleProductClick = () => {
-        navigate('/reviews');
+        // Check for category in URL
+        const params = new URLSearchParams(location.search);
+        const cat = params.get('category');
+        if (cat) {
+            setSelectedCategory(cat);
+        }
+    }, [location.search]);
+
+    const handleProductClick = (product: any) => {
+        setSelectedProduct(product);
+        setIsDetailModalOpen(true);
     };
+
+    const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
+        e.currentTarget.src = 'https://images.unsplash.com/photo-1594322436404-5a0526db4d13?auto=format&fit=crop&q=80&w=400';
+    };
+
+    const filteredProducts = selectedCategory === 'All'
+        ? products
+        : products.filter(p => p.category === selectedCategory);
 
     return (
         <div className="shop-page">
             {/* Shop Hero */}
             <section className="shop-hero">
                 <div className="shop-hero-container">
-                    <img src={slides[currentSlide].img} alt="Hero" className="shop-hero-img" />
+                    <img src={slides[currentSlide].img} alt="Hero" className="shop-hero-img" onError={handleImageError} />
                     <div className="shop-hero-overlay">
                         <h1>{slides[currentSlide].text}</h1>
                     </div>
@@ -67,28 +92,51 @@ const Shop: React.FC = () => {
                 </div>
             </section>
 
-            {/* Dynamic Product Sections per Category */}
-            {categories.map((cat) => {
-                const categoryProducts = products.filter(p => p.category === cat.name);
-                if (categoryProducts.length === 0) return null;
+            {/* Category Filter Bar */}
+            <section className="category-filter-bar">
+                <div className="filter-scroll">
+                    <button
+                        className={`filter-btn ${selectedCategory === 'All' ? 'active' : ''}`}
+                        onClick={() => setSelectedCategory('All')}
+                    >All</button>
+                    {categories.map(cat => (
+                        <button
+                            key={cat.id}
+                            className={`filter-btn ${selectedCategory === cat.name ? 'active' : ''}`}
+                            onClick={() => setSelectedCategory(cat.name)}
+                        >
+                            {cat.name}
+                        </button>
+                    ))}
+                </div>
+            </section>
 
-                return (
-                    <section key={cat.id} className="shop-products-section">
-                        <h2 className="shop-section-title">{cat.name}</h2>
-                        <div className="shop-products-grid">
-                            {categoryProducts.map((item) => (
-                                <div key={item.id} className="shop-product-card clickable" onClick={handleProductClick}>
-                                    <div className="shop-img-box">
-                                        <img src={item.img} alt={item.name} />
-                                    </div>
-                                    <h3>{item.name}</h3>
-                                    {item.details && <p className="shop-item-details">{item.details.substring(0, 60)}...</p>}
-                                </div>
-                            ))}
+            {/* Dynamic Product Sections */}
+            <section className="shop-products-section">
+                <h2 className="shop-section-title">
+                    {selectedCategory === 'All' ? 'All Products' : selectedCategory}
+                </h2>
+                <div className="shop-products-grid">
+                    {filteredProducts.map((item) => (
+                        <div key={item.id} className="shop-product-card clickable" onClick={() => handleProductClick(item)}>
+                            <div className="shop-img-box">
+                                <img src={item.img} alt={item.name} onError={handleImageError} />
+                            </div>
+                            <h3>{item.name}</h3>
+                            {item.details && <p className="shop-item-details">{item.details.substring(0, 60)}...</p>}
                         </div>
-                    </section>
-                );
-            })}
+                    ))}
+                    {filteredProducts.length === 0 && (
+                        <p className="no-products">No products found in this category.</p>
+                    )}
+                </div>
+            </section>
+
+            <ProductDetailModal
+                isOpen={isDetailModalOpen}
+                onClose={() => setIsDetailModalOpen(false)}
+                product={selectedProduct}
+            />
         </div>
     );
 };

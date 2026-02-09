@@ -5,22 +5,24 @@ interface ReviewModalProps {
     isOpen: boolean;
     onClose: () => void;
     onAddReview: (review: any) => void;
+    productId: number | null;
 }
 
-const ReviewModal: React.FC<ReviewModalProps> = ({ isOpen, onClose, onAddReview }) => {
+const ReviewModal: React.FC<ReviewModalProps> = ({ isOpen, onClose, onAddReview, productId }) => {
     const [rating, setRating] = useState(5);
     const [title, setTitle] = useState('');
     const [message, setMessage] = useState('');
     const [selectedBadges, setSelectedBadges] = useState<string[]>([]);
+    const [images, setImages] = useState<string[]>([]);
 
     if (!isOpen) return null;
 
     const badges = [
-        { id: 'prof', name: 'Professional Service', icon: '/assets/service1.png' },
-        { id: 'eff', name: 'Efficient Service', icon: '/assets/service2.png' },
-        { id: 'fast', name: 'Fast Response', icon: '/assets/service3.png' },
-        { id: 'time', name: 'Timeliness', icon: '/assets/service1.png' },
-        { id: 'supp', name: 'Supportive Staff', icon: '/assets/service2.png' }
+        { id: 'prof', name: 'Professional', icon: 'ri-shield-user-line' },
+        { id: 'eff', name: 'Efficient', icon: 'ri-rocket-line' },
+        { id: 'fast', name: 'Fast Response', icon: 'ri-flashlight-line' },
+        { id: 'time', name: 'Timeliness', icon: 'ri-time-line' },
+        { id: 'supp', name: 'Supportive', icon: 'ri-customer-service-2-line' }
     ];
 
     const toggleBadge = (id: string) => {
@@ -28,6 +30,19 @@ const ReviewModal: React.FC<ReviewModalProps> = ({ isOpen, onClose, onAddReview 
             setSelectedBadges(selectedBadges.filter(b => b !== id));
         } else {
             setSelectedBadges([...selectedBadges, id]);
+        }
+    };
+
+    const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const files = e.target.files;
+        if (files) {
+            Array.from(files).forEach(file => {
+                const reader = new FileReader();
+                reader.onloadend = () => {
+                    setImages(prev => [...prev, reader.result as string]);
+                };
+                reader.readAsDataURL(file);
+            });
         }
     };
 
@@ -39,12 +54,14 @@ const ReviewModal: React.FC<ReviewModalProps> = ({ isOpen, onClose, onAddReview 
 
         const newReview = {
             id: Date.now(),
+            productId: productId,
             user: 'You',
             date: new Date().toLocaleString(),
             rating: rating,
             text: message,
             title: title,
-            badges: selectedBadges
+            badges: selectedBadges,
+            images: images
         };
 
         onAddReview(newReview);
@@ -55,6 +72,7 @@ const ReviewModal: React.FC<ReviewModalProps> = ({ isOpen, onClose, onAddReview 
         setMessage('');
         setRating(5);
         setSelectedBadges([]);
+        setImages([]);
     };
 
     return (
@@ -64,14 +82,23 @@ const ReviewModal: React.FC<ReviewModalProps> = ({ isOpen, onClose, onAddReview 
 
                 <div className="modal-body">
                     <div className="modal-left">
-                        <div className="upload-area">
-                            <i className="ri-upload-2-line"></i>
+                        <label className="upload-area">
+                            <input type="file" multiple accept="image/*" onChange={handleImageUpload} style={{ display: 'none' }} />
+                            <i className="ri-image-add-line"></i>
                             <p>Upload Product Image</p>
-                        </div>
+                        </label>
                         <div className="upload-thumbs">
-                            <div className="thumb-box"></div>
-                            <div className="thumb-box"></div>
-                            <div className="thumb-box"></div>
+                            {images.map((img, idx) => (
+                                <div key={idx} className="thumb-box">
+                                    <img src={img} alt="Preview" />
+                                    <button className="remove-thumb" onClick={() => setImages(images.filter((_, i) => i !== idx))}>
+                                        <i className="ri-close-circle-fill"></i>
+                                    </button>
+                                </div>
+                            ))}
+                            {[...Array(Math.max(0, 3 - images.length))].map((_, i) => (
+                                <div key={`empty-${i}`} className="thumb-box empty"></div>
+                            ))}
                         </div>
                         <div className="rating-stars-input">
                             {[1, 2, 3, 4, 5].map((num) => (
@@ -97,7 +124,7 @@ const ReviewModal: React.FC<ReviewModalProps> = ({ isOpen, onClose, onAddReview 
                         <div className="form-group-modal">
                             <label>Your Message</label>
                             <textarea
-                                rows={6}
+                                rows={4}
                                 placeholder="Tell us more about the product and service..."
                                 value={message}
                                 onChange={e => setMessage(e.target.value)}
@@ -111,7 +138,7 @@ const ReviewModal: React.FC<ReviewModalProps> = ({ isOpen, onClose, onAddReview 
                                     className={`badge ${selectedBadges.includes(badge.id) ? 'selected' : ''}`}
                                     onClick={() => toggleBadge(badge.id)}
                                 >
-                                    <img src={badge.icon} alt={badge.name} />
+                                    <i className={badge.icon}></i>
                                     <span>{badge.name}</span>
                                 </div>
                             ))}

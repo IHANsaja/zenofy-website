@@ -8,14 +8,20 @@ interface ProductCardProps {
     price: number;
     popular?: boolean;
     rating?: number;
+    hideCart?: boolean;
+    onClick?: () => void;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ brand, image, name, price, popular, rating }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ brand, image, name, price, popular, rating, hideCart, onClick }) => {
+    const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
+        e.currentTarget.src = 'https://images.unsplash.com/photo-1594322436404-5a0526db4d13?auto=format&fit=crop&q=80&w=400';
+    };
+
     return (
-        <div className="product-card">
+        <div className={`product-card ${onClick ? 'clickable' : ''}`} onClick={onClick}>
             <div className="product-image-container">
                 {brand && <div className="product-brand-tag">{brand}</div>}
-                <img src={image} alt={name} className="product-img" />
+                <img src={image} alt={name} className="product-img" onError={handleImageError} />
             </div>
             <div className="product-info">
                 <h3 className="product-title">{name}</h3>
@@ -36,7 +42,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ brand, image, name, price, po
                 )}
                 <div className="product-actions">
                     <button className="btn-buy">BUY</button>
-                    <button className="btn-cart-icon"><i className="ri-shopping-cart-line"></i></button>
+                    {!hideCart && <button className="btn-cart-icon"><i className="ri-shopping-cart-line"></i></button>}
                 </div>
             </div>
         </div>

@@ -16,11 +16,14 @@
     background: var(--bg-dark);
     width: 100%;
     max-width: 900px;
+    max-height: 90vh;
     border-radius: 32px;
     border: 1px solid var(--glass-border);
     position: relative;
-    overflow: hidden;
+    overflow-y: auto;
     box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8);
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-gold) transparent;
 }
 
 .close-x {
@@ -179,9 +182,14 @@
     text-align: center;
 }
 
-.badge img {
-    height: 30px;
-    filter: brightness(1.2);
+.badge i {
+    font-size: 24px;
+    color: var(--secondary-light);
+    transition: var(--transition-fast);
+}
+
+.badge.selected i {
+    color: var(--accent-gold);
 }
 
 .badge span {
@@ -199,6 +207,43 @@
 
 .badge.selected span {
     color: var(--accent-gold);
+}
+
+.thumb-box {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.thumb-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.thumb-box.empty {
+    opacity: 0.2;
+    border: 1px dashed var(--glass-border);
+}
+
+.remove-thumb {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: white;
+    color: var(--accent-red);
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    z-index: 2;
 }
 
 .btn-modal-submit {

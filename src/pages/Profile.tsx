@@ -3,10 +3,10 @@ import './Profile.css';
 
 const Profile: React.FC = () => {
     return (
-        <div className="profile-page">
-            <div className="profile-container">
+        <div className="profile-page glass-bg">
+            <div className="profile-container glass-card">
                 <div className="profile-header">
-                    <h2 className="profile-title">Profile</h2>
+                    <h2 className="profile-title gold-text">Profile</h2>
                     <button className="back-btn"><i className="ri-arrow-left-circle-fill"></i></button>
                 </div>
 

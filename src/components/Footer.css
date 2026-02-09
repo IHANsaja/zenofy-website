@@ -71,11 +71,15 @@
     color: var(--accent-gold);
 }
 
-.links-list {
-    padding: 0;
+.links-list li {
     display: flex;
-    flex-direction: column;
-    gap: 15px;
+    align-items: center;
+    gap: 12px;
+}
+
+.links-list i {
+    color: var(--accent-gold);
+    font-size: 18px;
 }
 
 .links-list a {

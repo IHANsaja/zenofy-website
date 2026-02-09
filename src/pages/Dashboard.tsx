@@ -12,6 +12,7 @@ import {
     ArcElement,
 } from 'chart.js';
 import { Line, Bar } from 'react-chartjs-2';
+import logo from '../assets/logo.png';
 import './Dashboard.css';
 
 ChartJS.register(
@@ -50,11 +51,11 @@ const Dashboard: React.FC = () => {
 
     // --- Product State Management ---
     const initialProducts = [
-        { id: 1, img: '/assets/pro1.png', name: 'Manual Wall Mount Projector Screen', category: 'Projector Screens', details: 'A durable manual screen.' },
-        { id: 2, img: '/assets/pro2.png', name: 'Tripod Projector Screen', category: 'Projector Screens', details: 'Portable tripod screen.' },
-        { id: 3, img: '/assets/pro1.png', name: 'Electric Wall Mount Projector Screen', category: 'Projector Screens', details: 'Motorized high-quality screen.' },
-        { id: 4, img: '/assets/pro5.png', name: 'Projector Stand', category: 'Projector Accessories', details: 'Adjustable projector stand.' },
-        { id: 5, img: '/assets/pro4.png', name: 'Projector Brackets', category: 'Projector Accessories', details: 'Ceiling mount brackets.' },
+        { id: 1, img: 'https://images.unsplash.com/photo-1593359677879-14ff9d56508d?auto=format&fit=crop&q=80&w=400', name: 'Elite Series 4K Projector', category: 'Projector Screens', details: 'A high-end 4K projector for home cinema.' },
+        { id: 2, img: 'https://images.unsplash.com/photo-1583321500900-82807e458f3c?auto=format&fit=crop&q=80&w=400', name: 'Manual Wall Mount Projector Screen', category: 'Projector Screens', details: 'A durable manual screen.' },
+        { id: 3, img: 'https://images.unsplash.com/photo-1493106819501-66d381c466f1?auto=format&fit=crop&q=80&w=400', name: 'Electric Wall Mount Projector Screen', category: 'Projector Screens', details: 'Motorized high-quality screen.' },
+        { id: 4, img: 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80&w=400', name: 'Projector Stand', category: 'Projector Accessories', details: 'Adjustable projector stand.' },
+        { id: 5, img: 'https://images.unsplash.com/photo-1628155930542-3c7a64e2c833?auto=format&fit=crop&q=80&w=400', name: 'Projector Brackets', category: 'Projector Accessories', details: 'Ceiling mount brackets.' },
     ];
 
     const [products, setProducts] = useState(() => {
@@ -136,6 +137,10 @@ const Dashboard: React.FC = () => {
         setCatFormData({ name: category.name, description: category.description || '' });
     };
 
+    const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
+        e.currentTarget.src = 'https://images.unsplash.com/photo-1594322436404-5a0526db4d13?auto=format&fit=crop&q=80&w=400';
+    };
+
     // --- Chart Data ---
     const incomeData = {
         labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
@@ -167,7 +172,7 @@ const Dashboard: React.FC = () => {
         <div className="dashboard-container">
             <header className="dashboard-header">
                 <div className="hp1">
-                    <img src="/assets/logo.jpg" alt="logo" height="40px" width="40px" />
+                    <img src={logo} alt="logo" height="40px" width="40px" onError={handleImageError} />
                     <h2>ZENOFY ADMIN</h2>
                 </div>
                 <div className="hp2">
@@ -194,8 +199,8 @@ const Dashboard: React.FC = () => {
                             <i className="ri-file-user-fill"></i><p>User Area</p>
                         </li>
                     </ul>
-                    <button className="logout-btn" onClick={() => window.location.href = '/login'}>
-                        <i className="ri-logout-box-r-line"></i> Log Out
+                    <button className="logout-btn plain-admin-logout" onClick={() => window.location.href = '/login'} title="Log Out">
+                        <i className="ri-logout-box-r-line"></i>
                     </button>
                 </aside>
 
@@ -318,7 +323,7 @@ const Dashboard: React.FC = () => {
                             <div className="admin-products-grid">
                                 {products.map((item: any) => (
                                     <div key={item.id} className="shop-product-card admin-card">
-                                        <div className="shop-img-box"><img src={item.img} alt={item.name} /></div>
+                                        <div className="shop-img-box"><img src={item.img} alt={item.name} onError={handleImageError} /></div>
                                         <h3>{item.name}</h3>
                                         <p className="product-category">{item.category}</p>
                                         <p className="product-details-preview">{item.details?.substring(0, 50)}...</p>

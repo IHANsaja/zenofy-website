@@ -1,16 +1,30 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
+import ProductDetailModal from '../components/ProductDetailModal';
 import './Home.css';
 
 const Home: React.FC = () => {
+    const navigate = useNavigate();
+    const [selectedProduct, setSelectedProduct] = useState<any>(null);
+    const [isDetailModalOpen, setIsDetailModalOpen] = useState(false);
+
     const popularProducts = [
-        { brand: 'ZENOFY', name: 'Elite Series 4K Projector', price: 1250, rating: 5, image: 'https://images.unsplash.com/photo-1593359677879-14ff9d56508d?auto=format&fit=crop&q=80&w=400', popular: true },
-        { brand: 'ZENOFY', name: '120" ALR Fixed Frame Screen', price: 850, rating: 5.0, image: 'https://images.unsplash.com/photo-1583321500900-82807e458f3c?auto=format&fit=crop&q=80&w=400', popular: true },
-        { brand: 'ZENOFY', name: 'Ultra-Quiet Motorized Screen', price: 950, rating: 5.0, image: 'https://images.unsplash.com/photo-1493106819501-66d381c466f1?auto=format&fit=crop&q=80&w=400', popular: true },
-        { brand: 'ZENOFY', name: 'Heavy Duty Projector Lift', price: 450, rating: 5.0, image: 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80&w=400', popular: true },
-        { brand: 'ZENOFY', name: 'Precision Projector Stand', price: 120, rating: 5.0, image: 'https://images.unsplash.com/photo-1628155930542-3c7a64e2c833?auto=format&fit=crop&q=80&w=400', popular: true },
+        { id: 1, brand: 'ZENOFY', name: 'Elite Series 4K Projector', price: 1250, rating: 5, image: 'https://images.unsplash.com/photo-1593359677879-14ff9d56508d?auto=format&fit=crop&q=80&w=400', popular: true },
+        { id: 2, brand: 'ZENOFY', name: '120" ALR Fixed Frame Screen', price: 850, rating: 5.0, image: 'https://images.unsplash.com/photo-1583321500900-82807e458f3c?auto=format&fit=crop&q=80&w=400', popular: true },
+        { id: 3, brand: 'ZENOFY', name: 'Ultra-Quiet Motorized Screen', price: 950, rating: 5.0, image: 'https://images.unsplash.com/photo-1493106819501-66d381c466f1?auto=format&fit=crop&q=80&w=400', popular: true },
+        { id: 4, brand: 'ZENOFY', name: 'Heavy Duty Projector Lift', price: 450, rating: 5.0, image: 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80&w=400', popular: true },
+        { id: 5, brand: 'ZENOFY', name: 'Precision Projector Stand', price: 120, rating: 5.0, image: 'https://images.unsplash.com/photo-1628155930542-3c7a64e2c833?auto=format&fit=crop&q=80&w=400', popular: true },
     ];
+
+    const handleCategoryClick = (name: string) => {
+        navigate(`/shop?category=${encodeURIComponent(name)}`);
+    };
+
+    const handleProductClick = (product: any) => {
+        setSelectedProduct(product);
+        setIsDetailModalOpen(true);
+    };
 
     return (
         <div className="home-page">
@@ -26,15 +40,11 @@ const Home: React.FC = () => {
                             are designed to deliver exceptional image clarity, brightness, and durability, ensuring an
                             immersive and reliable experience for all your projection needs.
                         </p>
-                        <button className="btn-primary">SHOP NOW</button>
+                        <button className="btn-primary" onClick={() => navigate('/shop')}>SHOP NOW</button>
                     </div>
                     <div className="hero-visual">
                         {/* Large illustration as seen in Image 2 */}
                         <img src="https://images.unsplash.com/photo-1517604401157-53c755bef0ee?auto=format&fit=crop&q=80&w=800" alt="Zenofy Hero Illustration" className="hero-img" />
-                        <div className="search-overlay">
-                            <input type="text" placeholder="I'm looking for ..." className="search-input" />
-                            <button className="search-btn"><i className="ri-search-line"></i></button>
-                        </div>
                     </div>
                 </div>
             </section>
@@ -44,14 +54,14 @@ const Home: React.FC = () => {
                 <div className="collection-card dark-blue">
                     <div className="collection-info">
                         <h3>VEGA SMART SCREENS COLLECTION</h3>
-                        <button className="btn-outline">BUY NOW</button>
+                        <button className="btn-outline" onClick={() => navigate('/shop')}>BUY NOW</button>
                     </div>
                     <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=400" alt="Vega Screens" />
                 </div>
                 <div className="collection-card dark-navy">
                     <div className="collection-info">
                         <h3>PROJECTOR LIFTS AND STANDS</h3>
-                        <button className="btn-outline">BUY NOW</button>
+                        <button className="btn-outline" onClick={() => navigate('/shop')}>BUY NOW</button>
                     </div>
                     <img src="https://images.unsplash.com/photo-1540317580384-e5d43616b9aa?auto=format&fit=crop&q=80&w=400" alt="Lifts and Stands" />
                 </div>
@@ -67,8 +77,13 @@ const Home: React.FC = () => {
                     </div>
                 </div>
                 <div className="products-grid">
-                    {popularProducts.map((product, index) => (
-                        <ProductCard key={index} {...product} />
+                    {popularProducts.map((product) => (
+                        <ProductCard
+                            key={product.id}
+                            {...product}
+                            hideCart={true}
+                            onClick={() => handleProductClick(product)}
+                        />
                     ))}
                 </div>
             </section>
@@ -84,7 +99,7 @@ const Home: React.FC = () => {
                         { icon: 'ri-stack-line', name: 'Projector Stand' },
                         { icon: 'ri-arrow-up-down-line', name: 'Projector Lift' },
                     ].map((cat, i) => (
-                        <div key={i} className="category-item">
+                        <div key={i} className="category-item clickable" onClick={() => handleCategoryClick(cat.name)}>
                             <div className="category-icon-box">
                                 <i className={cat.icon}></i>
                             </div>
@@ -97,21 +112,33 @@ const Home: React.FC = () => {
             {/* Services */}
             <section className="services-section">
                 <div className="service-card">
-                    <img src="/assets/service1.png" alt="Free Delivery" />
+                    <div className="service-icon-box">
+                        <i className="ri-truck-line"></i>
+                    </div>
                     <h3>Free Delivery</h3>
                     <p>We provide free delivery for orders over 50,000 LKR</p>
                 </div>
                 <div className="service-card">
-                    <img src="/assets/service2.png" alt="Secure Payment" />
+                    <div className="service-icon-box">
+                        <i className="ri-shield-check-line"></i>
+                    </div>
                     <h3>Secure Payment</h3>
                     <p>You can use Visa or Mastercard for secure online payments</p>
                 </div>
                 <div className="service-card">
-                    <img src="/assets/service3.png" alt="Smart Assistance" />
+                    <div className="service-icon-box">
+                        <i className="ri-customer-service-2-line"></i>
+                    </div>
                     <h3>Smart Assistance</h3>
                     <p>Reach out to our customer support, powered by a blend of smart human and AI assistants</p>
                 </div>
             </section>
+
+            <ProductDetailModal
+                isOpen={isDetailModalOpen}
+                onClose={() => setIsDetailModalOpen(false)}
+                product={selectedProduct}
+            />
         </div>
     );
 };
