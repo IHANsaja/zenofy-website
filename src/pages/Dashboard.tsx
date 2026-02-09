@@ -51,11 +51,11 @@ const Dashboard: React.FC = () => {
 
     // --- Product State Management ---
     const initialProducts = [
-        { id: 1, img: 'https://images.unsplash.com/photo-1593359677879-14ff9d56508d?auto=format&fit=crop&q=80&w=400', name: 'Elite Series 4K Projector', category: 'Projector Screens', details: 'A high-end 4K projector for home cinema.' },
-        { id: 2, img: 'https://images.unsplash.com/photo-1583321500900-82807e458f3c?auto=format&fit=crop&q=80&w=400', name: 'Manual Wall Mount Projector Screen', category: 'Projector Screens', details: 'A durable manual screen.' },
-        { id: 3, img: 'https://images.unsplash.com/photo-1493106819501-66d381c466f1?auto=format&fit=crop&q=80&w=400', name: 'Electric Wall Mount Projector Screen', category: 'Projector Screens', details: 'Motorized high-quality screen.' },
-        { id: 4, img: 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80&w=400', name: 'Projector Stand', category: 'Projector Accessories', details: 'Adjustable projector stand.' },
-        { id: 5, img: 'https://images.unsplash.com/photo-1628155930542-3c7a64e2c833?auto=format&fit=crop&q=80&w=400', name: 'Projector Brackets', category: 'Projector Accessories', details: 'Ceiling mount brackets.' },
+        { id: 1, img: 'https://images.unsplash.com/photo-1593359677879-14ff9d56508d?auto=format&fit=crop&q=80&w=400', name: 'Elite Series 4K Projector', category: 'Projector Screens', price: 1250, details: 'A high-end 4K projector for home cinema.' },
+        { id: 2, img: 'https://images.unsplash.com/photo-1583321500900-82807e458f3c?auto=format&fit=crop&q=80&w=400', name: 'Manual Wall Mount Projector Screen', category: 'Projector Screens', price: 450, details: 'A durable manual screen.' },
+        { id: 3, img: 'https://images.unsplash.com/photo-1493106819501-66d381c466f1?auto=format&fit=crop&q=80&w=400', name: 'Electric Wall Mount Projector Screen', category: 'Projector Screens', price: 950, details: 'Motorized high-quality screen.' },
+        { id: 4, img: 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80&w=400', name: 'Projector Stand', category: 'Projector Accessories', price: 120, details: 'Adjustable projector stand.' },
+        { id: 5, img: 'https://images.unsplash.com/photo-1628155930542-3c7a64e2c833?auto=format&fit=crop&q=80&w=400', name: 'Projector Brackets', category: 'Projector Accessories', price: 85, details: 'Ceiling mount brackets.' },
     ];
 
     const [products, setProducts] = useState(() => {
@@ -65,7 +65,24 @@ const Dashboard: React.FC = () => {
 
     const [isEditingProd, setIsEditingProd] = useState(false);
     const [currentProduct, setCurrentProduct] = useState<any>(null);
-    const [prodFormData, setProdFormData] = useState({ name: '', category: '', img: '', details: '' });
+    const [prodFormData, setProdFormData] = useState({ name: '', category: '', img: '', price: 0, details: '' });
+
+    // --- Sales State Management ---
+    const [monthlySales, setMonthlySales] = useState(() => {
+        const saved = localStorage.getItem('zenofy_monthly_sales');
+        return saved ? JSON.parse(saved) : [
+            { id: 1, month: 'January', units: 45, income: 45000 },
+            { id: 2, month: 'February', units: 52, income: 57800 },
+            { id: 3, month: 'March', units: 0, income: 0 },
+            { id: 4, month: 'April', units: 0, income: 0 },
+            { id: 5, month: 'May', units: 0, income: 0 },
+            { id: 6, month: 'June', units: 0, income: 0 },
+        ];
+    });
+
+    useEffect(() => {
+        localStorage.setItem('zenofy_monthly_sales', JSON.stringify(monthlySales));
+    }, [monthlySales]);
 
     useEffect(() => {
         localStorage.setItem('zenofy_products', JSON.stringify(products));
@@ -98,14 +115,19 @@ const Dashboard: React.FC = () => {
         const newProduct = { id: Date.now(), ...prodFormData };
         setProducts([...products, newProduct]);
         setIsEditingProd(false);
-        setProdFormData({ name: '', category: '', img: '', details: '' });
+        setProdFormData({ name: '', category: '', img: '', price: 0, details: '' });
     };
 
     const handleUpdateProduct = () => {
         setProducts(products.map((p: any) => p.id === currentProduct.id ? { ...p, ...prodFormData } : p));
         setIsEditingProd(false);
         setCurrentProduct(null);
-        setProdFormData({ name: '', category: '', img: '', details: '' });
+        setProdFormData({ name: '', category: '', img: '', price: 0, details: '' });
+    };
+
+    const handleUpdateSales = (id: number, field: 'units' | 'income', value: string) => {
+        const numVal = parseFloat(value) || 0;
+        setMonthlySales(monthlySales.map((s: any) => s.id === id ? { ...s, [field]: numVal } : s));
     };
 
     const handleDeleteProduct = (id: number) => {
@@ -128,7 +150,13 @@ const Dashboard: React.FC = () => {
     const openEditProd = (product: any) => {
         setIsEditingProd(true);
         setCurrentProduct(product);
-        setProdFormData({ name: product.name, category: product.category, img: product.img, details: product.details || '' });
+        setProdFormData({
+            name: product.name,
+            category: product.category,
+            img: product.img,
+            price: product.price || 0,
+            details: product.details || ''
+        });
     };
 
     const openEditCat = (category: any) => {
@@ -141,13 +169,13 @@ const Dashboard: React.FC = () => {
         e.currentTarget.src = 'https://images.unsplash.com/photo-1594322436404-5a0526db4d13?auto=format&fit=crop&q=80&w=400';
     };
 
-    // --- Chart Data ---
+    // --- Chart Data (Derived from monthlySales) ---
     const incomeData = {
-        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        labels: monthlySales.map((s: any) => s.month),
         datasets: [
             {
-                label: 'Daily Income',
-                data: [400, 300, 500, 450, 600, 700, 550],
+                label: 'Monthly Income (LKR)',
+                data: monthlySales.map((s: any) => s.income),
                 borderColor: '#FDBE33',
                 backgroundColor: 'rgba(253, 190, 51, 0.1)',
                 tension: 0.4,
@@ -157,12 +185,12 @@ const Dashboard: React.FC = () => {
     };
 
     const salesData = {
-        labels: categories.map((c: any) => c.name),
+        labels: monthlySales.map((s: any) => s.month),
         datasets: [
             {
-                label: 'Category Sales',
-                data: categories.map(() => Math.floor(Math.random() * 100) + 50),
-                backgroundColor: ['#FDBE33', '#DED8E0', '#4B8E3B', '#A83232', '#666'],
+                label: 'Monthly Sales (Units)',
+                data: monthlySales.map((s: any) => s.units),
+                backgroundColor: '#FDBE33',
                 borderRadius: 8,
             },
         ],
@@ -211,7 +239,10 @@ const Dashboard: React.FC = () => {
                             <div className="stats">
                                 <div className="stat-item">
                                     <i className="ri-archive-stack-fill"></i>
-                                    <div className="stat-text"><h3>Total Products sold</h3><p>290</p></div>
+                                    <div className="stat-text">
+                                        <h3>Total Products sold</h3>
+                                        <p>{monthlySales.reduce((acc: number, s: any) => acc + s.units, 0)}</p>
+                                    </div>
                                 </div>
                                 <div className="stat-item">
                                     <i className="ri-team-fill"></i>
@@ -219,7 +250,10 @@ const Dashboard: React.FC = () => {
                                 </div>
                                 <div className="stat-item-reverse">
                                     <i className="ri-money-dollar-circle-fill"></i>
-                                    <div className="stat-text"><h3>This month earnings</h3><p>$578.25</p></div>
+                                    <div className="stat-text">
+                                        <h3>Total Earnings</h3>
+                                        <p>LKR {monthlySales.reduce((acc: number, s: any) => acc + s.income, 0).toLocaleString()}</p>
+                                    </div>
                                 </div>
                             </div>
                             <div className="charts">
@@ -281,7 +315,7 @@ const Dashboard: React.FC = () => {
                         <div className="tab-content">
                             <div className="tab-header">
                                 <h2>Product Management</h2>
-                                <button className="add-btn" onClick={() => { setIsEditingProd(true); setCurrentProduct(null); setProdFormData({ name: '', category: '', img: '', details: '' }); }}>
+                                <button className="add-btn" onClick={() => { setIsEditingProd(true); setCurrentProduct(null); setProdFormData({ name: '', category: '', img: '', price: 0, details: '' }); }}>
                                     <i className="ri-add-line"></i> Add Product
                                 </button>
                             </div>
@@ -307,6 +341,10 @@ const Dashboard: React.FC = () => {
                                                 <textarea value={prodFormData.details} onChange={(e) => setProdFormData({ ...prodFormData, details: e.target.value })} placeholder="Detailed description..." rows={3} />
                                             </div>
                                             <div className="form-group">
+                                                <label>Price (LKR)</label>
+                                                <input type="number" value={prodFormData.price} onChange={(e) => setProdFormData({ ...prodFormData, price: parseFloat(e.target.value) || 0 })} placeholder="e.g. 1250" />
+                                            </div>
+                                            <div className="form-group">
                                                 <label>Image</label>
                                                 <input type="file" onChange={handleImageUpload} />
                                                 {prodFormData.img && <img src={prodFormData.img} alt="Preview" className="img-preview" />}
@@ -326,6 +364,7 @@ const Dashboard: React.FC = () => {
                                         <div className="shop-img-box"><img src={item.img} alt={item.name} onError={handleImageError} /></div>
                                         <h3>{item.name}</h3>
                                         <p className="product-category">{item.category}</p>
+                                        <p className="product-price-admin">LKR {item.price?.toLocaleString() || 0}</p>
                                         <p className="product-details-preview">{item.details?.substring(0, 50)}...</p>
                                         <div className="admin-actions">
                                             <button className="edit-btn" onClick={() => openEditProd(item)}><i className="ri-edit-line"></i></button>
@@ -333,6 +372,63 @@ const Dashboard: React.FC = () => {
                                         </div>
                                     </div>
                                 ))}
+                            </div>
+                        </div>
+                    )}
+                    {activeTab === 'userArea' && (
+                        <div className="tab-content">
+                            <div className="tab-header">
+                                <h2>User Area - Manual Sales Tracking</h2>
+                            </div>
+                            <div className="sales-data-table-container">
+                                <table className="sales-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Month</th>
+                                            <th>Units Sold</th>
+                                            <th>Income (LKR)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {monthlySales.map((s: any) => (
+                                            <tr key={s.id}>
+                                                <td>{s.month}</td>
+                                                <td>
+                                                    <input
+                                                        type="number"
+                                                        className="admin-input"
+                                                        value={s.units}
+                                                        onChange={(e) => handleUpdateSales(s.id, 'units', e.target.value)}
+                                                    />
+                                                </td>
+                                                <td>
+                                                    <input
+                                                        type="number"
+                                                        className="admin-input"
+                                                        value={s.income}
+                                                        onChange={(e) => handleUpdateSales(s.id, 'income', e.target.value)}
+                                                    />
+                                                </td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div className="product-monthly-details">
+                                <h3>Product Details per Month</h3>
+                                <div className="monthly-details-grid">
+                                    {monthlySales.filter((s: any) => s.units > 0).map((s: any) => (
+                                        <div key={s.id} className="monthly-detail-card">
+                                            <h4>{s.month}</h4>
+                                            <p><strong>Total Units:</strong> {s.units}</p>
+                                            <p><strong>Total Revenue:</strong> LKR {s.income.toLocaleString()}</p>
+                                            <div className="mini-product-list">
+                                                <span>Top: {products[0]?.name}</span>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     )}

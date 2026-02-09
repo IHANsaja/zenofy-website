@@ -351,6 +351,95 @@
     font-weight: 700;
 }
 
+.product-price-admin {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-white);
+    margin: 10px 0;
+}
+
+.sales-data-table-container {
+    background: var(--glass-bg);
+    border-radius: 20px;
+    padding: 20px;
+    border: 1px solid var(--glass-border);
+    margin-bottom: 40px;
+    overflow-x: auto;
+}
+
+.sales-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.sales-table th,
+.sales-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.sales-table th {
+    color: var(--accent-gold);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.admin-input {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    color: var(--primary-white);
+    padding: 8px 12px;
+    border-radius: 8px;
+    width: 120px;
+    font-size: 1rem;
+}
+
+.product-monthly-details h3 {
+    margin-bottom: 25px;
+    color: var(--primary-white);
+}
+
+.monthly-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.monthly-detail-card {
+    background: var(--glass-bg);
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid var(--glass-border);
+    transition: var(--transition-fast);
+}
+
+.monthly-detail-card:hover {
+    border-color: var(--accent-gold);
+    transform: translateY(-5px);
+}
+
+.monthly-detail-card h4 {
+    color: var(--accent-gold);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.monthly-detail-card p {
+    color: var(--secondary-light);
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+.mini-product-list {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid var(--glass-border);
+    font-size: 0.85rem;
+    color: var(--accent-gold);
+    font-weight: 600;
+}
+
 @media (max-width: 768px) {
     .sidebar {
         width: 80px;

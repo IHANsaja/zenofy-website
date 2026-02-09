@@ -37,11 +37,11 @@ const Shop: React.FC = () => {
         // Load Products
         const savedProducts = localStorage.getItem('zenofy_products');
         const initialProducts = [
-            { id: 1, img: 'https://images.unsplash.com/photo-1583321500900-82807e458f3c?auto=format&fit=crop&q=80&w=400', name: 'Zenofy ALR Pro 120" Screen', category: 'Ambient Light Rejecting Screens', details: 'High-contrast surface for bright rooms.' },
-            { id: 2, img: 'https://images.unsplash.com/photo-1593359677879-14ff9d56508d?auto=format&fit=crop&q=80&w=400', name: 'UltraShort Throw 4K Laser Projector', category: '4K High Definition Projectors', details: 'Stunning 4K clarity from just inches away.' },
-            { id: 3, img: 'https://images.unsplash.com/photo-1493106819501-66d381c466f1?auto=format&fit=crop&q=80&w=400', name: 'Motorized Drop-Down Elite Screen', category: 'Ambient Light Rejecting Screens', details: 'Silent operation with premium reflection.' },
-            { id: 4, img: 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80&w=400', name: 'Universal Heavy Duty Ceiling Mount', category: 'Professional Installation Kits', details: 'Safe and secure mounting for any projector.' },
-            { id: 5, img: 'https://images.unsplash.com/photo-1628155930542-3c7a64e2c833?auto=format&fit=crop&q=80&w=400', name: '8K HDMI 2.1 Fiber Optic Cable (15m)', category: 'Professional Installation Kits', details: 'Lossless signal for extreme distances.' },
+            { id: 1, img: 'https://images.unsplash.com/photo-1583321500900-82807e458f3c?auto=format&fit=crop&q=80&w=400', name: 'Zenofy ALR Pro 120" Screen', category: 'Ambient Light Rejecting Screens', price: 850, details: 'High-contrast surface for bright rooms.' },
+            { id: 2, img: 'https://images.unsplash.com/photo-1593359677879-14ff9d56508d?auto=format&fit=crop&q=80&w=400', name: 'UltraShort Throw 4K Laser Projector', category: '4K High Definition Projectors', price: 2450, details: 'Stunning 4K clarity from just inches away.' },
+            { id: 3, img: 'https://images.unsplash.com/photo-1493106819501-66d381c466f1?auto=format&fit=crop&q=80&w=400', name: 'Motorized Drop-Down Elite Screen', category: 'Ambient Light Rejecting Screens', price: 1100, details: 'Silent operation with premium reflection.' },
+            { id: 4, img: 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80&w=400', name: 'Universal Heavy Duty Ceiling Mount', category: 'Professional Installation Kits', price: 75, details: 'Safe and secure mounting for any projector.' },
+            { id: 5, img: 'https://images.unsplash.com/photo-1628155930542-3c7a64e2c833?auto=format&fit=crop&q=80&w=400', name: '8K HDMI 2.1 Fiber Optic Cable (15m)', category: 'Professional Installation Kits', price: 120, details: 'Lossless signal for extreme distances.' },
         ];
         const prods = savedProducts ? JSON.parse(savedProducts) : initialProducts;
         setProducts(prods);
@@ -123,6 +123,7 @@ const Shop: React.FC = () => {
                                 <img src={item.img} alt={item.name} onError={handleImageError} />
                             </div>
                             <h3>{item.name}</h3>
+                            <p className="shop-item-price">LKR {item.price?.toLocaleString() || '0'}</p>
                             {item.details && <p className="shop-item-details">{item.details.substring(0, 60)}...</p>}
                         </div>
                     ))}
