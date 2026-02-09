@@ -20,11 +20,17 @@
   box-sizing: border-box;
 }
 
+html,
 body {
-  font-family: 'Roboto', 'Inter', sans-serif;
-  background-color: var(--primary-white);
-  color: var(--bg-dark);
+  margin: 0;
+  padding: 0;
+  width: 100%;
   overflow-x: hidden;
+  font-family: 'Roboto', 'Inter', sans-serif;
+  background-color: var(--bg-dark);
+  /* Changed from primary-white to match theme */
+  color: var(--primary-white);
+  /* Changed from bg-dark to match theme */
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }

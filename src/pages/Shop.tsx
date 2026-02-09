@@ -113,24 +113,50 @@ const Shop: React.FC = () => {
 
             {/* Dynamic Product Sections */}
             <section className="shop-products-section">
-                <h2 className="shop-section-title">
-                    {selectedCategory === 'All' ? 'All Products' : selectedCategory}
-                </h2>
-                <div className="shop-products-grid">
-                    {filteredProducts.map((item) => (
-                        <div key={item.id} className="shop-product-card clickable" onClick={() => handleProductClick(item)}>
-                            <div className="shop-img-box">
-                                <img src={item.img} alt={item.name} onError={handleImageError} />
+                {selectedCategory === 'All' ? (
+                    categories.map(cat => {
+                        const categoryProducts = products.filter(p => p.category === cat.name);
+                        if (categoryProducts.length === 0) return null;
+                        return (
+                            <div key={cat.id} className="category-group">
+                                <h2 className="shop-section-title">{cat.name}</h2>
+                                <div className="shop-products-scroll-wrapper">
+                                    <div className="shop-products-grid grouped">
+                                        {categoryProducts.map((item) => (
+                                            <div key={item.id} className="shop-product-card clickable" onClick={() => handleProductClick(item)}>
+                                                <div className="shop-img-box">
+                                                    <img src={item.img} alt={item.name} onError={handleImageError} />
+                                                </div>
+                                                <h3>{item.name}</h3>
+                                                <p className="shop-item-price">LKR {item.price?.toLocaleString() || '0'}</p>
+                                                {item.details && <p className="shop-item-details">{item.details.substring(0, 60)}...</p>}
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
                             </div>
-                            <h3>{item.name}</h3>
-                            <p className="shop-item-price">LKR {item.price?.toLocaleString() || '0'}</p>
-                            {item.details && <p className="shop-item-details">{item.details.substring(0, 60)}...</p>}
+                        );
+                    })
+                ) : (
+                    <>
+                        <h2 className="shop-section-title">{selectedCategory}</h2>
+                        <div className="shop-products-grid">
+                            {filteredProducts.map((item) => (
+                                <div key={item.id} className="shop-product-card clickable" onClick={() => handleProductClick(item)}>
+                                    <div className="shop-img-box">
+                                        <img src={item.img} alt={item.name} onError={handleImageError} />
+                                    </div>
+                                    <h3>{item.name}</h3>
+                                    <p className="shop-item-price">LKR {item.price?.toLocaleString() || '0'}</p>
+                                    {item.details && <p className="shop-item-details">{item.details.substring(0, 60)}...</p>}
+                                </div>
+                            ))}
+                            {filteredProducts.length === 0 && (
+                                <p className="no-products">No products found in this category.</p>
+                            )}
                         </div>
-                    ))}
-                    {filteredProducts.length === 0 && (
-                        <p className="no-products">No products found in this category.</p>
-                    )}
-                </div>
+                    </>
+                )}
             </section>
 
             <ProductDetailModal

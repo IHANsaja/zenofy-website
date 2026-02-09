@@ -222,3 +222,24 @@
         gap: 20px;
     }
 }
+
+@media (max-width: 600px) {
+    .profile-container {
+        padding: 30px 20px;
+        border-radius: 20px;
+    }
+
+    .profile-title {
+        font-size: 1.8rem;
+    }
+
+    .btn-save {
+        padding: 15px 40px;
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    .profile-page {
+        padding: 40px 15px;
+    }
+}

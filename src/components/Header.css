@@ -276,4 +276,8 @@
     .brand-name {
         font-size: 20px;
     }
+
+    .search-container {
+        width: 150px;
+    }
 }
