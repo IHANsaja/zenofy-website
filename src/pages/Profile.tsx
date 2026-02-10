@@ -122,7 +122,7 @@ const Profile: React.FC = () => {
 
                 {/* Illustration as seen in Image 0 */}
                 <div className="profile-illustration">
-                    <img src="/assets/profile-illustration.png" alt="Profile Illustration" />
+                    <img src="src/assets/profile-illustration.png" alt="Profile Illustration" />
                 </div>
             </div>
         </div>

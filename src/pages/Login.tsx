@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import './Login.css';
+import './Auth.css';
 
 const Login: React.FC = () => {
     const [email, setEmail] = useState('');
@@ -16,18 +16,25 @@ const Login: React.FC = () => {
         if (email === 'admin@zenofy.com' && password === 'admin123') {
             navigate('/admin/dashboard');
         } else if (email === 'user@zenofy.com' && password === 'user123') {
-            navigate('/shop');
+            navigate('/home');
         } else {
             setError('Invalid email or password. Hint: admin@zenofy.com / admin123 or user@zenofy.com / user123');
         }
     };
 
     return (
-        <div className="login-container">
-            <div className="login-card">
+        <div className="auth-container">
+            <div className="auth-card">
+                <div className="auth-illustration">
+                    <img
+                        src="src/assets/logo.png"
+                        alt="Login Illustration"
+                        onError={(e) => e.currentTarget.src = 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=400'}
+                    />
+                </div>
                 <h2>Login</h2>
                 {error && <div className="error-message">{error}</div>}
-                <form className="login-form" onSubmit={handleLogin}>
+                <form className="auth-form" onSubmit={handleLogin}>
                     <div className="form-group">
                         <label htmlFor="email">Email</label>
                         <input
@@ -50,9 +57,9 @@ const Login: React.FC = () => {
                             required
                         />
                     </div>
-                    <button type="submit" className="login-btn">Login</button>
+                    <button type="submit" className="auth-btn">Login</button>
                 </form>
-                <div className="login-footer">
+                <div className="auth-footer">
                     <p>Don't have an account? <Link to="/signup">Sign up</Link></p>
                 </div>
             </div>

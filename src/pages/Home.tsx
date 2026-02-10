@@ -44,7 +44,7 @@ const Home: React.FC = () => {
                     </div>
                     <div className="hero-visual">
                         {/* Large illustration as seen in Image 2 */}
-                        <img src="https://images.unsplash.com/photo-1517604401157-53c755bef0ee?auto=format&fit=crop&q=80&w=800" alt="Zenofy Hero Illustration" className="hero-img" />
+                        <img src="src\assets\ZenofyHero.png" alt="Zenofy Hero Illustration" className="hero-img" />
                     </div>
                 </div>
             </section>
